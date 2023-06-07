@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <link rel="stylesheet" href="../css/reset.min.css">
+</head>
+<body>
+<!-- 탭1 -->
+<style>
+    .wrap{margin:20px;}
+    button{padding:10px 30px;border:1px solid #ccc;background:transparent;appearance:none;font-size:15px;font-weight:700;}
+    .tab_wrap::after{content:'';display:block;clear:both;}
+    .tab_wrap li{float:left;margin-right:15px;}
+    .tab_wrap li:last-child{margin-right:0;}
+    .tab_wrap li.active button{background:#333;color:#fff;}
+    .tab_cont_wrap{margin-top:20px;}
+    .tab_cont_wrap li{display:none;}
+    .tab_cont_wrap li.active{display:block;}
+</style>
+
+<div class="wrap">
+    <ul class="tab_wrap">
+        <li class="active"><button>가</button></li>
+        <li><button>나</button></li>
+        <li><button>다</button></li>
+    </ul>
+
+    <ul class="tab_cont_wrap">
+        <li class="active">가입니다.</li>
+        <li>나입니다.</li>
+        <li>다입니다.</li>
+    </ul>
+</div>
+
+<script>
+    const tabWrap = document.querySelectorAll('.tab_wrap li');
+    const tabCont = document.querySelectorAll('.tab_cont_wrap li');
+
+    for(var i = 0; i < tabWrap.length; i++){
+        tabWrap[i].addEventListener('click', function(e){
+            for(var j = 0; j < tabWrap.length; j++){
+                tabWrap[j].classList.remove('active');
+                tabCont[j].classList.remove('active');
+            }
+        });
+    }
+
+    tabWrap.forEach((el, index) => {
+        el.onclick = () => {
+            tabWrap[index].classList.add('active');
+            tabCont[index].classList.add('active');
+        }
+    });
+</script>
+<!--// 탭1 --> 
+
+<!-- 탭2 -->
+<style>
+    .tab_wrap2{display:flex;justify-content:space-between;margin-top:50px;}
+    .tab_wrap2 li.active button{background:#999;color:#fff;}
+    .tab_cont_wrap2{margin-top:20px;}
+    .tab_cont_wrap2 li{display:none;}
+    .tab_cont_wrap2 li.active{display:block;}
+</style>
+
+<div class="wrap">
+    <ul class="tab_wrap2">
+        <li class="active"><button>가</button></li>
+        <li><button>나</button></li>
+        <li><button>다</button></li>
+    </ul>
+
+    <ul class="tab_cont_wrap2">
+        <li class="active">가입니다.</li>
+        <li>나입니다.</li>
+        <li>다입니다.</li>
+    </ul>
+</div>
+
+<script>
+    const tabWrap2 = document.querySelectorAll('.tab_wrap2 li');
+    const tabCont2 = document.querySelectorAll('.tab_cont_wrap2 li');
+
+    tabWrap2.forEach((tab, idx) => {
+        tab.addEventListener('click', function(){
+            tabCont2.forEach((inner) => {
+                inner.classList.remove('active');
+            });
+
+            tabWrap2.forEach((item) => {
+                item.classList.remove('active');
+            });
+
+            tabWrap2[idx].classList.add('active');
+            tabCont2[idx].classList.add('active');
+        });
+    });
+</script>
+<!--// 탭2 -->
+
+
+</body>
+</html>

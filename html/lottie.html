@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lottie</title>
+</head>
+<body>
+    
+    <div id="lottieWrap"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js"></script>
+    <script>
+        var lottieAni = bodymovin.loadAnimation({
+            container: document.getElementById('lottieWrap'),
+            path: 'loading.json',
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+        });
+
+        lottieAni.setSpeed(0.3); //스피드 제어
+        setTimeout(function(){
+            lottieAni.playSegment([0, 50], true); //프레임 제어
+        }, 500)
+
+        lottieAni.loop = false; // 로띠 루프 false로 변경
+        lottieAni.playSegment([50, 185], true);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <script src="../js/menu.js"></script>
+</head>
+<body>
+
+<style>
+    .hidden{overflow:hidden;}
+
+    .menu_wrap{position:fixed;top:0;bottom:0;right:0;z-index:1;width:100%;text-align:right;}
+    .menu_wrap .btn_wrap{all:unset;padding:10px;}
+    .menu_wrap .menu_list_box{overflow:auto;position:absolute;right:-100vw;top:0;bottom:0;width:100%;padding:60px 20px 20px;background:#c5e38b;transition:right .3s ease-out;text-align:left;box-sizing:border-box;}
+    .menu_wrap.active .menu_list_box{right:0;}
+    .menu_wrap .menu_list_box .btn_close{all:unset;position:absolute;top:5px;right:20px;font-size:30px;font-weight:700;}
+    .menu_wrap .menu_box{overflow:auto;white-space:nowrap;}
+    .menu_wrap .menu_box li{display:inline-block;padding:10px;border-radius:10px;background:#fff;line-height:1;}
+    .menu_wrap .menu_box li.active{background:#5e782c;font-weight:700;color:#fff;}
+    .menu_wrap .list_box{padding-top:50px;}
+    .menu_wrap .list_box strong{display:block;padding:15px 0;font-size:20px;font-weight:700;}
+    .menu_wrap .list_box li{margin-top:20px;}
+    .menu_wrap .list_box li:first-child{margin-top:0;}
+    .menu_wrap .list_box li li{margin-top:10px;font-size:15px;}
+    .menu_wrap .menu_list_box.scroll .menu_box{position:fixed;top:0;right:0;left:0;padding:10px;background:#fff;}
+</style>
+
+<div class="wrap">
+    <div class="menu_wrap active">
+        <button class="btn_menu">▶</button>
+        <div class="menu_list_box">
+            <button class="btn_close">X</button>
+            <ul class="menu_box">
+                <li class="active">과일</li>
+                <li>색깔</li>
+                <li>견과류</li>
+                <li>나라이름</li>
+                <li>숫자</li>
+                <li>과자이름</li>
+                <li>10 이상 50 이하 숫자</li>
+                <li>100 이상 숫자</li>
+            </ul>
+            <ul class="list_box">
+                <li>
+                    <strong>과일</strong>
+                    <ul>
+                        <li>사과</li>
+                        <li>바나나</li>
+                        <li>블루베리</li>
+                        <li>파인애플</li>
+                        <li>배</li>
+                        <li>수박</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>색깔</strong>
+                    <ul>
+                        <li>검은색</li>
+                        <li>분홍색</li>
+                        <li>회색</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>견과류</strong>
+                    <ul>
+                        <li>땅콩</li>
+                        <li>구운 아몬드</li>
+                        <li>호두</li>
+                        <li>피스타치오</li>
+                        <li>마카다미아</li>
+                        <li>캐슈넛</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>나라이름</strong>
+                    <ul>
+                        <li>대한민국</li>
+                        <li>캐나다</li>
+                        <li>뉴질랜드</li>
+                        <li>에티오피아</li>
+                        <li>베트남</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>숫자</strong>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>과자이름</strong>
+                    <ul>
+                        <li>새우깡</li>
+                        <li>바나나킥</li>
+                        <li>빼빼로</li>
+                        <li>매운 새우깡</li>
+                        <li>웨하스</li>
+                        <li>화이트하임</li>
+                        <li>몽쉘</li>
+                        <li>초코하임</li>
+                        <li>빅파이</li>
+                        <li>초코파이</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>10 이상 50 이하 숫자</strong>
+                    <ul>
+                        <li>15</li>
+                        <li>25</li>
+                        <li>35</li>
+                        <li>45</li>
+                        <li>40</li>
+                        <li>30</li>
+                        <li>20</li>
+                        <li>10</li>
+                        <li>17</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>100 이상 숫자</strong>
+                    <ul>
+                        <li>101</li>
+                        <li>102</li>
+                        <li>103</li>
+                        <li>104</li>
+                        <li>105</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="text">
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+        글자 <br>
+    </div>
+
+    <!-- <div onclick="pos(event)" style="position:absolute;top:100px;left:100px;width:200px;height:200px;borer:1px solid #222;"></div>
+    <div id="result"></div> -->
+</div>
+</body>
+</html>

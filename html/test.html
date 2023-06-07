@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <title>던킨</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="http://sonhee0126.dothome.co.kr/portfolio/dunkin/css/common.css">
+    
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <div class="header-r">
+                    <h1 class="logo-area">
+                        <a href="./index.html">
+                            <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/logo.png" alt="던킨도넛" class="header-logo">
+                        </a>
+                    </h1>
+
+                    <div class="m-menu-btn">
+                        <i class="blind">모바일 메뉴 버튼</i>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <nav class="nav">
+                        <i class="blind">네비게이션</i>
+                        <div class="gnb-in">
+
+                            <div class="m-add-menu">
+                                <h2 class="m-logo-area">
+                                    <a href="./index.html">
+                                        <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/logo.png" alt="던킨도넛">
+                                    </a>
+                                </h2>
+
+                                <div class="add-menu">
+                                    <a href="#">창업문의</a>
+                                    <a href="#">로그인</a>
+                                </div>
+
+                                <button type="button" class="close-btn">
+                                    <i class="fa-regular fa-circle-xmark"></i>
+                                </button>
+                            </div>
+
+                            <ul class="gnb-list">
+
+                                <li class="depth1">
+                                    <a href="#"><span class="color-red">D</span><span class="color-orange">D</span> COMMITMAENT
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb">
+                                                <li><a href="#">도넛 만드는 이야기</a></li>
+                                                <li><a href="#">고객과의 약속</a></li>
+                                                <li><a href="#">생산센터 투어</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="depth1">
+                                    <a href="#">BRAND
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb">
+                                                <li><a href="#">브랜드 소개</a></li>
+                                                <li><a href="#">브랜드 소식</a></li>
+                                                <li><a href="#">미디어 센터</a></li>
+                                                <li><a href="#">CF</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="depth1">
+                                    <a href="#">STORE
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb">
+                                                <li><a href="#">오프라인 STORE</a></li>
+                                                <li><a href="#">가맹점 개설안내</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="depth1">
+                                    <a href="#">MENU
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb menu-lnb">
+                                                <li class="lnb-box"><a href="#" class="lnb-main">DONUT</a>
+                                                    <ul class="lnb-sub">
+                                                        <li><a href="#">이달의 도넛</a></li>
+                                                        <li><a href="#">베이직</a></li>
+                                                        <li><a href="#">베이글</a></li>
+                                                        <li><a href="#">기타</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="lnb-box"><a href="#" class="lnb-main">SANDWICHES</a>
+                                                    <ul class="lnb-sub">
+                                                        <li><a href="#">핫 샌드위치</a></li>
+                                                        <li><a href="#">DD 앳홈</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="lnb-box"><a href="#" class="lnb-main">COFFEE</a>
+                                                    <ul class="lnb-sub">
+                                                        <li><a href="#">던카치노</a></li>
+                                                        <li><a href="#">브로드웨이</a></li>
+                                                        <li><a href="#">던킨 에스프레소</a></li>
+                                                        <li><a href="#">브류드커피</a></li>
+                                                        <li><a href="#">디카페인</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="lnb-box"><a href="#" class="lnb-main">BEVERAGE</a>
+                                                    <ul class="lnb-sub">
+                                                        <li><a href="#">버블/젤리</a></li>
+                                                        <li><a href="#">에이드/아이스티</a></li>
+                                                        <li><a href="#">쿨라타</a></li>
+                                                        <li><a href="#">초코/티/티 라떼</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="lnb-box"><a href="#" class="lnb-main">OTHERS</a>
+                                                    <ul class="lnb-sub">
+                                                         <li><a href="#">아이스 디저트</a></li>
+                                                        <li><a href="#">커피상품</a></li>
+                                                        <li><a href="#">선물</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="depth1">
+                                    <a href="#">영양정보 및 알레르기
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb">
+                                                <li><a href="#">DONUT</a></li>
+                                                <li><a href="#">SANDWICHES </a></li>
+                                                <li><a href="#">COFFEE</a></li>
+                                                <li><a href="#">BEVERAGE</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="depth1">
+                                    <a href="#">EVENT
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb">
+                                                <li><a href="#">진행중인 이벤트</a></li>
+                                                <li><a href="#">당첨자 발표</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="depth1">
+                                    <a href="#">ONLINE STORE
+                                        <div class="arrow-area">
+                                            <span class="arrow1"></span>
+                                            <span class="arrow2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="gnb_bg">
+                                        <div class="gnb_in">
+                                            <ul class="lnb">
+                                                <li><a href="#">해피오더 서비스</a></li>
+                                                <li><a href="#">해피 E-MARKET</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="header-l">
+                    <ul class="header-l-list">
+                        <li><a href="#" class="color-orange">창업문의</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li class="serch-btn">
+                            <i class="blind">검색하기</i>
+                            <div class="serch">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!--요기에 검색창 넣어야함-->
+
+                </div>
+
+            </div> <!--inner-->
+        </header>
+
+
+        <main id="contents">
+
+            <div class="visual">
+                <div class="swiper mySwiper swiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <picture>
+                                    <source media="(max-width:800px)" srcset="././images/visual_1_re.jpg">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/visual_1.jpg" alt="포코와 함께하는 딸기행사">
+                                </picture>
+                                <ul class="blind">
+                                    <li>페코와 함께하는 러블리 스트로베리</li>
+                                    <li>전통 보름달 도넛</li>
+                                    <li>봄날엔 페코와 딸기 츄이스티</li>
+                                    <li>페코,포코 우리끼리</li>
+                                    <li>더 자세히 알아보기</li>
+                                </ul>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <picture>
+                                    <source media="(max-width:800px)" srcset="././images/visual_2_re.jpg">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/visual_2.jpg" alt="킹 아이스아메리카노 이벤트">
+                                </picture>
+                                <ul class="blind">
+                                    <li>충분하게, 시원하게</li>
+                                    <li>킹 아이스 아메리카노</li>
+                                    <li>더 자세히 알아보기</li>
+                                </ul>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <picture>
+                                    <source media="(max-width:800px)" srcset="././images/visual_3_re.jpg">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/visual_3.jpg" alt="해피오더 서비스">
+                                </picture>
+                                <ul class="blind">
+                                    <li>해피오더 서비스</li>
+                                    <li>해피앱에서 간편하게 예약&픽업 배달까지</li>
+                                    <li>주문하러가기</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="v-inner">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+    
+                        <div class="autoplay-progress">
+                            <svg viewBox="0 0 48 48" width="30px">
+                                <circle cx="24" cy="24" r="20"></circle>
+                            </svg>
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>    <!--swiper mySwiper 끝-->
+
+            </div>   <!--visual 끝-->
+
+            
+            <div class="contents1 inner">
+                <div class="con1-txt">
+                    <h2 class="con-name">Dunkin’ Donuts’s Menu</h2>
+                    <p class="con-next-name">던킨도너츠의 다양한 음료와 도넛들</p>
+                </div>
+
+                <div class="menu swiper mySwiper">
+                    <ul class="menu-list swiper-wrapper">
+                        <li class="menu-con swiper-slide">
+                            <a href="#">
+                                <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents1_1.jpg" alt="도넛">
+                                <span class="manu-h1"></span>
+                                <span class="manu-h2"></span>
+                                <span class="manu-h3"></span>
+                                <span class="manu-h4"></span>
+                            </a>
+                            <h3>Donuts</h3>
+                        </li>
+
+                        <li class="menu-con swiper-slide">
+                            <a href="#">
+                                <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents1_2.jpg" alt="커피">
+                                <span class="manu-h1"></span>
+                                <span class="manu-h2"></span>
+                                <span class="manu-h3"></span>
+                                <span class="manu-h4"></span>
+                            </a>
+                            <h3>Coffee</h3>
+                        </li>
+
+                        <li class="menu-con swiper-slide">
+                            <a href="#">
+                                <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents1_3.jpg" alt="샌드위치">
+                                <span class="manu-h1"></span>
+                                <span class="manu-h2"></span>
+                                <span class="manu-h3"></span>
+                                <span class="manu-h4"></span>
+                            </a>
+                            <h3>Hot Sandwiches</h3>
+                        </li>
+
+                        <li class="menu-con swiper-slide">
+                            <a href="#">
+                                <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents1_4.jpg" alt="음료">
+                                <span class="manu-h1"></span>
+                                <span class="manu-h2"></span>
+                                <span class="manu-h3"></span>
+                                <span class="manu-h4"></span>
+                            </a>
+                            <h3>Beverage</h3>
+                        </li>
+
+                        <li class="menu-con swiper-slide">
+                            <a href="#">
+                                <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents1_5.jpg" alt="기타 메뉴">
+                                <span class="manu-h1"></span>
+                                <span class="manu-h2"></span>
+                                <span class="manu-h3"></span>
+                                <span class="manu-h4"></span>
+                            </a>
+                            <h3>Others</h3>
+                        </li>
+                    </ul>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            </div> <!--contents1 inner  끝-->
+
+            <div class="dounets-ani">
+                <div class="ani-img"></div>
+            </div>
+
+            <div class="con23">
+                <div class="contents2">
+                    <div class="inner">
+                        <div class="contents2-area">
+                            
+                            <div class="con2">
+                                <div class="con2-txt">
+                                    <div class="con2-txt-wrap">
+                                        <h2 class="con-name">Find A Store</h2>
+                                        <p class="con-next-name">
+                                            <span>달콤한 휴식을 즐길 수 있는</span>
+                                            <span>던킨도너츠 매장을 찾아보세요</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="serch">
+                                        <input type="text" placeholder="매장명을 검색하세요." class="serch-box">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contents3">
+                    <div class="inner">
+                        <div class="contents3-area">
+
+                            <div class="con3">
+                                <div class="con3-txt">
+                                    <div class="con3-txt-wrap">
+                                        <h2 class="con-name">Catering Service</h2>
+                                        <p class="con-next-name">
+                                            <span>특별한 날, 던킨과 함께</span>
+                                            <span>즐거움을 나누세요.</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="tel">
+                                        <a href="tel:02-2276-4854">
+                                            <span>견적문의</span>
+                                            <span>02-2276-4854</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contents4">
+
+                <div class="inner">
+                    <div class="con4-txt">
+                        <h2 class="con-name">Promotions</h2>
+                        <p class="con-next-name">던킨의 다양한 혜택과 이벤트</p>
+                    </div>
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents4_1.png" alt="이달의 메뉴 10% 할인">
+                                </a>
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents4_2.png" alt="이달의 메뉴 10% 할인">
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents4_3.png" alt="이달의 메뉴 10% 할인">
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents4_4.png" alt="이달의 메뉴 10% 할인">
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/contents4_5.png" alt="이달의 메뉴 10% 할인">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <div class="inner">
+
+                <div class="footer-top">
+                    <a href="#">
+                        <img src="http://sonhee0126.dothome.co.kr/portfolio/dunkin/images/logo.png" alt="던킨도넛">
+                    </a>
+
+                    <div class="familtsite">
+                        <button type="button">FAMILY SITE
+                            <span class="arrow1-f"></span>
+                            <span class="arrow2-f"></span>
+                        </button>
+                        <ul class="site-list">
+                            <li>
+                                <a href="#">SPC그룹</a>
+                            </li>
+                            <li>
+                                <a href="#">배스킨라빈스</a>
+                            </li>
+                            <li>
+                                <a href="#">파리바게뜨</a>
+                            </li>
+                            <li>
+                                <a href="#">파스쿠찌</a>
+                            </li>
+                            <li>
+                                <a href="#">해피포인트카드</a>
+                            </li>
+                            <li>
+                                <a href="#">던킨 아르바이트</a>
+                            </li>
+                        </ul>
+                    </div>  <!--familtsite-->
+
+                </div> <!--footer-top-->
+
+                <div class="footer-middle">
+                    <ul class="policy-list">
+                        <li><a href="#">윤리신고센터</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#" class="color-red">개인정보처리방침</a></li>
+                        <li><a href="#">영상정보처리기기운영관리방침</a></li>
+                        <li><a href="#">안전보건경영방침</a></li>
+                        <li><a href="#">이메일무단수집거부</a></li>
+                        <li><a href="#">거래희망회사 사전등록</a></li>
+                        <li><a href="#">채용안내</a></li>
+                    </ul>
+
+                    <ul class="info-list">
+                        <li>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</li>
+                        <li>사업자 등록번호 : 303-81-09535</li>
+                        <li>비알코리아(주) 대표이사 이주연</li>
+                        <li>TEL : 080-555-3131</li>
+                        <li>개인정보관리책임자 : 김경우</li>
+                    </ul>
+                </div>
+
+                <p>COPYRIGHT Ⓒ 2016 BRKOREA COMPANY. ALL RIGHTS RESERVED.</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="test.js"></script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

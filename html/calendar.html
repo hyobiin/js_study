@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <script src="../js/calendar.js"></script>
+</head>
+<body>
+
+<style>
+    .calendar_wrap{margin-bottom:100px;}
+    .calendar_wrap .calendar_top_wrap .select_box{position:relative;padding:20px;border-top:1px solid #222;border-bottom:1px solid #222;}
+    .calendar_wrap .calendar_top_wrap button{position:absolute;top:50%;width:50px;height:50px;margin-top:-25px;border-radius:50%;background:#222;font-size:16px;font-weight:700;color:#fff;}
+    .calendar_wrap .calendar_top_wrap .btn_prev{left:15px;}
+    .calendar_wrap .calendar_top_wrap .btn_next{right:15px;}
+    .calendar_wrap .calendar_top_wrap p{margin:0;padding:10px;text-align:center;}
+    .calendar_wrap .calendar_top_wrap .today{background:#ddffdd;}
+    .calendar_wrap .calendar_date_wrap{padding:10px 0;}
+    .calendar_wrap .calendar_date_wrap th{padding:10px 25px;text-align:center;}
+</style>
+
+<div class="calendar_wrap">
+    <div class="calendar_top_wrap">
+        <div class="select_box">
+            <button class="btn_prev">이전</button>
+            <p class="date_box">
+                <span class="year"><span class="year_num"></span></span>
+                <span class="month"><span class="month_num"></span></span>
+            </p>
+            <button class="btn_next">다음</button>
+        </div>
+        <p class="today"></p>
+        <p class="today_test"></p>
+    </div>
+    <div class="calendar_date_wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">일</th>
+                    <th scope="col">월</th>
+                    <th scope="col">화</th>
+                    <th scope="col">수</th>
+                    <th scope="col">목</th>
+                    <th scope="col">금</th>
+                    <th scope="col">토</th>
+                </tr>
+            </thead>
+            <tbody class="day_box"></tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

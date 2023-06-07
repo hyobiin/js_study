@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하단 버튼</title>
+    <link rel="stylesheet" href="../css/reset.min.css">
+</head>
+<body>
+
+<style>
+    .wrap{padding-bottom:200px;}
+    .btn_wrap{position:fixed;bottom:20px;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%);width:100%;padding:24px;background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 6%, #fff 43%);box-sizing:border-box;}
+    .btn_wrap a{display:block;padding:20px;background:pink;box-sizing:border-box;text-align:center;}
+</style>
+
+<div class="wrap">
+    <div class="text">
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+        텍스트 <br>
+    </div>
+
+    <div style="height:700px;background:#ddd;"></div>
+
+    <div class="btn_wrap">
+        <a href="#none;">바로가기</a>
+    </div>
+</div>
+
+<script>
+    const wrap = document.querySelector('.wrap');
+    const btnWrap = document.querySelector('.btn_wrap');
+    const body = document.querySelector('body');
+
+    wrap.onscroll = function(){
+        let scrollTop = wrap.scrollTop;
+        console.log(scrollTop);
+    }
+</script>
+
+</body>
+</html>
