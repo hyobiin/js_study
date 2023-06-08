@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>scroll-active</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            section {
+                max-width: 1200px;
+                width: 100%;
+                margin: 0 auto;
+                height: 100vh;
+                position: relative;
+            }
+
+            #home > header {
+                position: fixed;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                height: 50px;
+                background-color: #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                max-width: 1200px;
+                width: 100%;
+                z-index: 9999;
+            }
+
+            #home > header > ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 15px;
+                cursor: pointer;
+            }
+
+            #home > header > ul > li {
+                transition: all 0.5s ease-in-out;
+            }
+
+            #home > header > ul > li.active {
+                color: blue;
+                font-size: 18px;
+            }
+
+            #home > h2,
+            #content1,
+            #content2,
+            #content3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #eee;
+                font-size: 30px;
+            }
+            #content1 {
+                background-color: #333;
+            }
+
+            #content2 {
+                background-color: #444;
+            }
+
+            #content3 {
+                background-color: #555;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="all_wrap">
+			<section id="home">
+				<header>
+					<div>
+						<a href="#">LOGO</a>
+					</div>
+					<ul>
+						<li class="home active">home</li>
+						<li class="content1">content1</li>
+						<li class="content2">content2</li>
+						<li class="content3">content3</li>
+					</ul>
+				</header>
+				<h2>home</h2>
+			</section>
+			<section id="content1">
+				<h2>Content1</h2>
+			</section>
+			<section id="content2">
+				<h2>Content2</h2>
+			</section>
+			<section id="content3">
+				<h2>Content3</h2>
+			</section>
+		</div>
+
+		<script>
+			// HTML section Element id 요소를 가져온다.
+			const sectionAll = document.querySelectorAll("section[id]");
+
+			// javascript scroll api 사용
+			window.addEventListener("scroll", () => {
+				const scrollY = window.pageYOffset;
+                console.log(scrollY);
+
+				sectionAll.forEach((current) => {
+					const sectionHeight = current.offsetHeight;
+					const sectionTop = current.offsetTop - 50;
+					const sectionId = current.getAttribute("id");
+
+					if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
+						document.querySelector(`.${sectionId}`).classList.add("active");
+					} else {
+						document.querySelector(`.${sectionId}`).classList.remove("active");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

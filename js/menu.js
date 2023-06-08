@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuList.classList.remove('scroll');
         }
         console.log(scrollTop_);
-        console.log(fMenuLi[1].pageYOffset);
+        // console.log(fMenuLi[1].pageYOffset);
         // console.log(fMenu);
         // 스크롤시 각 메뉴 타이틀에 active
         for(var i = 0; i < fMenu.length; i++){
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // document.querySelector('.menu_box li').classList.remove('active');
                 // fMenu[i].classList.add('active');
             // }
-            console.log(fMenuLi[i].scrollTop + 'kk');
-            console.log(fMenuLi);
+            console.log(fMenuLi[i].scrollTop_ + ' kk');
+            // console.log(fMenuLi);
         }
     }
 
