@@ -19,6 +19,7 @@
     .calendar_wrap .calendar_top_wrap p{margin:0;padding:10px;text-align:center;}
     .calendar_wrap .calendar_top_wrap .today{background:#ddffdd;}
     .calendar_wrap .calendar_date_wrap{padding:10px 0;}
+    .calendar_wrap .calendar_date_wrap table{width:100%;}
     .calendar_wrap .calendar_date_wrap th{padding:10px 25px;text-align:center;}
 </style>
 
@@ -27,8 +28,8 @@
         <div class="select_box">
             <button class="btn_prev">이전</button>
             <p class="date_box">
-                <span class="year"><span class="year_num"></span></span>
-                <span class="month"><span class="month_num"></span></span>
+                <span class="year"><span class="year_num"></span>년</span>
+                <span class="month"><span class="month_num"></span>월</span>
             </p>
             <button class="btn_next">다음</button>
         </div>
@@ -37,6 +38,15 @@
     </div>
     <div class="calendar_date_wrap">
         <table>
+            <colgroup>
+                <col style="width:14.28%">
+                <col style="width:14.28%">
+                <col style="width:14.28%">
+                <col style="width:14.28%">
+                <col style="width:14.28%">
+                <col style="width:14.28%">
+                <col style="width:*">
+            </colgroup>
             <thead>
                 <tr>
                     <th scope="col">일</th>
