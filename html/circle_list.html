@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before circle num</title>
+    <style>
+        .circl_num_list{counter-reset:section;}
+        .circl_num_list li{position:relative;padding-left:19px;font-size:16px;line-height:26px;letter-spacing:-.5px;}
+        .circl_num_list li::before{content:counter(section);counter-increment:section;position:absolute;top:6px;left:0;width:14px;height:14px;margin-left:-.5px;border:1px solid #222;border-radius:50%;font-size:11px;color:#222;line-height:13px;text-align:center;}
+    </style>
+</head>
+<body>
+    <ul class="circl_num_list">
+        <li>첫번째</li>
+        <li>두두두두ㅜ둗</li>
+        <li>세번쨰애앵</li>
+    </ul>
+</body>
+</html>
