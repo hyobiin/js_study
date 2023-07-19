@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffee menu</title>
+    <link rel="stylesheet" href="../css/reset.min.css">
+</head>
+<body>
+
+<style>
+    .menu_wrap .depth1{position:fixed;left:0;top:0;bottom:0;width:300px;background:#999;}
+    .menu_wrap .depth1 li, .menu_wrap .depth2_box li{padding:10px;}
+    .menu_wrap .depth1 li span{font-size:26px;}
+    .menu_wrap .depth2_box{display:none;position:fixed;left:0;top:0;bottom:0;width:300px;padding-top:70px;background:#eee;font-size:20px;}
+    .menu_wrap .depth2_box.active{display:block;}
+    .menu_wrap .depth2_box button{position:absolute;right:0;top:0;padding:10px;border:0;background:#fff;font-size:30px;outline:0;appearance:none;}
+    .menu_wrap .depth2_box li{display:none;}
+    .menu_wrap .depth2_box li.active{display:block;}
+    .menu_wrap .depth2_box li.active li{display:block;}
+    .menu_wrap .depth2_box .depth3 li ul{display:none;}
+    .menu_wrap .depth2_box .depth3 li.active ul{display:block;}
+</style>
+
+<div class="wrap">
+    <div class="menu_wrap">
+        <div class="depth1_box">
+            <ul class="depth1">
+                <li>
+                    <span>depth11111111111</span>
+                </li>
+                <li>
+                    <span>depth22222</span>
+                </li>
+                <li>
+                    <span>depth3333333</span>
+                </li>
+                <li>
+                    <span>depth4444444</span>
+                </li>
+                <li>
+                    <span>depth55555555555</span>
+                </li>
+                <li>
+                    <span>depth666</span>
+                </li>
+            </ul>
+        </div>
+        <div class="depth2_box">
+            <button class="btn_close">X</button>
+            <ul class="depth2">
+                <li>
+                    <span>첫번째</span>
+                    <ul class="depth3">
+                        <li>
+                            <span>depth3 +</span>
+                            <ul>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth33 +</span>
+                            <ul>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth333 +</span>
+                            <ul>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>두번째</span>
+                    <ul class="depth3">
+                        <li>
+                            <span>depth3 +</span>
+                            <ul>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth33 +</span>
+                            <ul>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth333 +</span>
+                            <ul>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>세번째</span>
+                    <ul class="depth3">
+                        <li>
+                            <span>depth3 +</span>
+                            <ul>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth33 +</span>
+                            <ul>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth333 +</span>
+                            <ul>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>넵ㄴ쨰</span>
+                    <ul class="depth3">
+                        <li>
+                            <span>depth3 +</span>
+                            <ul>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth33 +</span>
+                            <ul>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth333 +</span>
+                            <ul>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>다섯번째</span>
+                    <ul class="depth3">
+                        <li>
+                            <span>depth3 +</span>
+                            <ul>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth33 +</span>
+                            <ul>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth333 +</span>
+                            <ul>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>여섯번째</span>
+                    <ul class="depth3">
+                        <li>
+                            <span>depth3 +</span>
+                            <ul>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                                <li>1원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth33 +</span>
+                            <ul>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                                <li>2원두종류</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>depth333 +</span>
+                            <ul>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                                <li>3원두종류</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    var $depth2B = $('.depth2_box');
+    var $depth2Li = $('.depth2 > li');
+
+    // depth1
+    $('.depth1_box li').on('click', function(){
+        var $index = $(this).index();
+
+        $depth2B.addClass('active');
+        $depth2Li.eq($index).addClass('active');
+    });
+
+    // close
+    $('.btn_close').on('click', function(){
+        $(this).closest('div').removeClass('active');
+        $depth2Li.removeClass('active');
+    });
+
+    // depth3
+    $('.depth3 li').on('click', function(){
+        var $this = $(this);
+
+        $this.toggleClass('active');
+    });
+
+    $(document).ready(function(){
+        $(".depth1 a").on("click", function(){
+            var tab = $(this).attr("data-tab");
+
+            $(".depth1 a").removeClass("active");
+            $(".depth2").removeClass("active");
+            
+
+            $(this).addClass("active");
+            $("#"+tab).addClass("active");
+        });
+    });
+</script>
+</body>
+</html>
