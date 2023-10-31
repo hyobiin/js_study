@@ -1,0 +1,1687 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대 원격감시 시스템</title>
+    <link rel="stylesheet" href="http://project.finenuts.co.kr/2023/hyundal-chart/css/reset.css">
+    <link rel="stylesheet" href="http://project.finenuts.co.kr/2023/hyundal-chart/css/jquery-ui.css">
+    <link rel="stylesheet" href="http://project.finenuts.co.kr/2023/hyundal-chart/css/common.css">
+</head>
+<body class="overflow">
+    <header>
+        <div class="header_wrap map on">
+            <a class="logo" href="/">
+                <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/logo.svg" alt="">
+            </a>
+            <div class="header_menu_wrap fixed">
+                <div class="header_sub_menu">
+                    <ul class="header_sub_menu_item">
+                        <li>
+                            <a class="on" href="#">EMS 에너지 현황</a>
+                        </li>
+                        <li>
+                            <a href="#">온습도 현황</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="owner_btn_wrap">
+                    <button class="owner_btn"><span>사용자정의 보기</span></button>
+                    <div class="owner_box size">
+                        <button class="owner_box_close close">
+                            <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/owner_box_close.png" alt="사용자정의 닫기">
+                        </button>
+                        <div class="status_nav_list_wrap">
+                            <ul class="owner_menu_item">
+                                <li class="menu_item">
+                                    <div class="menu1_item">
+                                        <form action="">
+                                            <input type="text" placeholder="사업장을 검색해 주세요.">
+                                            <button>
+                                                <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/menu_item_icon.png" alt="사업장 검색">
+                                            </button>
+                                        </form>
+                                        <ul class="menu_btn_wrap">
+                                            <li class="on">
+                                                <a href=""><span>권역별</span></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span>용도별</span></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span>제휴사별</span></a>
+                                            </li>
+                                        </ul>
+                                        <div class="menu1_item_nav">
+                                            <div class="nav_form wd_300">
+                                                <div class="radio_box2">
+                                                    <input type="radio" id="individual2" name="choice2" checked>
+                                                    <label for="individual2">
+                                                        <i class="radio_img"></i>
+                                                        <span>개별선택</span>
+                                                    </label>
+                                                </div>
+                                                <div class="radio_box2 lst">
+                                                    <input type="radio" id="multiple2" name="choice2">
+                                                    <label for="multiple2">
+                                                        <i class="radio_img"></i>
+                                                        <span>다중선택</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <ul class="menu1_item_list">
+                                                <li>
+                                                    <div class="menu1_item_title">
+                                                        <strong>서울 / 경기</strong>
+                                                    </div>
+                                                    
+                                                    <div class="nav_scroll_wrap2">
+                                                        <ul class="status_nav_sub_list_v2">
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk">
+                                                                    <label for="nv_chk">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk1">
+                                                                    <label for="nv_chk1">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                               
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk2">
+                                                                    <label for="nv_chk2">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                               
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk3">
+                                                                    <label for="nv_chk3">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk4">
+                                                                    <label for="nv_chk4">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu1_item_title">
+                                                        <strong>부산</strong>
+                                                    </div>
+                                                    
+                                                    <div class="nav_scroll_wrap2">
+                                                        <ul class="status_nav_sub_list_v2">
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk11">
+                                                                    <label for="nv_chk11">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk12">
+                                                                    <label for="nv_chk12">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk13">
+                                                                    <label for="nv_chk13">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu1_item_title">
+                                                        <strong>전라</strong>
+                                                    </div>
+                                                    
+                                                    <div class="nav_scroll_wrap2">
+                                                        <ul class="status_nav_sub_list_v2">
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk17">
+                                                                    <label for="nv_chk17">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk18">
+                                                                    <label for="nv_chk18">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk2=19">
+                                                                    <label for="nv_chk19">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu1_item_title">
+                                                        <strong>강원</strong>
+                                                    </div>
+                                                    
+                                                    <div class="nav_scroll_wrap2">
+                                                        <ul class="status_nav_sub_list_v2">
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk17">
+                                                                    <label for="nv_chk17">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk18">
+                                                                    <label for="nv_chk18">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            <li>
+                                                                <div class="nav_chk_area">
+                                                                    <input type="checkbox" id="nv_chk2=19">
+                                                                    <label for="nv_chk19">
+                                                                        <span class="nav_text">현대자동차 포항서비스센터</span>
+                                                                        <span class="label_btn owner_chk">
+                                                                            <i></i>
+                                                                            
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu_item">
+                                    <ul class="menu2_item">
+                                        <li>
+                                            <div class="menu2_box">
+                                                <span>현대자동차 포항서비스센터</span>
+                                                <button>
+                                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/menu2_item_close.png" alt="닫기">
+                                                </button>
+                                            </div>
+                                            <div class="menu2_box_chk">
+                                                <input id="menu2_chk1" type="checkbox">
+                                                <label for="menu2_chk1">
+                                                    <i class="menu_chk_ico"></i>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu2_box">
+                                                <span>현대자동차 동부하이테크센터</span>
+                                                <button>
+                                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/menu2_item_close.png" alt="닫기">
+                                                </button>
+                                            </div>
+                                            <div class="menu2_box_chk">
+                                                <input id="menu2_chk2" type="checkbox">
+                                                <label for="menu2_chk2">
+                                                    <i class="menu_chk_ico"></i>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu2_box">
+                                                <span>현대자동차 원주출고센터</span>
+                                                <button>
+                                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/menu2_item_close.png" alt="닫기">
+                                                </button>
+                                            </div>
+                                            <div class="menu2_box_chk">
+                                                <input id="menu2_chk3" type="checkbox">
+                                                <label for="menu2_chk3">
+                                                    <i class="menu_chk_ico"></i>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="ipt_box"> 
+                                        <form action="">
+                                            <input type="text" placeholder="사업장 그룹명을 입력해 주세요.">
+                                            <button>저장</button>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="menu_item">
+                                    <ul class="menu3_item">
+                                        <li>
+                                            <input id="menu_chk1" type="checkbox">
+                                            <span>현대자동차 AS센터</span>
+                                            <label for="menu_chk1">
+                                                <i class="menu_chk_ico"></i>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input id="menu_chk2" type="checkbox">
+                                            <span>기아자동차 AS센터</span>
+                                            <label for="menu_chk2">
+                                                <i class="menu_chk_ico"></i>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input id="menu_chk3" type="checkbox">
+                                            <span>전동화 공장 모아보기</span>
+                                            <label for="menu_chk3">
+                                                <i class="menu_chk_ico"></i>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input id="menu_chk4" type="checkbox">
+                                            <span>현대및기아차 출고장</span>
+                                            <label for="menu_chk4">
+                                                <i class="menu_chk_ico"></i>
+                                            </label>
+                                        </li>
+                                        
+                                    </ul>
+                                    <div class="ipt_box2">
+                                        <button>삭제</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="owner_menu_item_btn">
+                                <button class="left"></button>
+                                <button class="right"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="header_date">2023-1-31 14:25:25</span>
+                <div class="btn_wrap">
+                    <ul>
+                        <li>
+                            <button class="login_button">
+                                <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/login_btn.png" alt="로그인">
+                            </button>
+                            <div class="login_info_wrap">
+                                <ul class="login_info_ul">
+                                    <li class="login_li"><a href="#">비밀번호변경</a></li>
+                                    <li class="login_li"><a href="#">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main_container main_v2">
+        <nav class="main_nav wd">
+            
+            <!-- 사이드 메뉴 -->
+            <div class="nav_dept2 iframe map ">
+                <div class="nav_dept2_search_form size2">
+                    <div class="selectBox2 size2">
+                        <button class="label">고객사별</button>
+                        <ul class="optionList">
+                            <li class="optionItem">권역별</li>
+                            <li class="optionItem">제휴사별</li>
+                            <li class="optionItem">사용자정의1</li>
+                            <li class="optionItem">권역별</li>
+                            
+                        </ul>
+                    </div>
+                    <!-- <div class="ems_tab_box">
+                        <ul class="ems_tab_list">
+                            <li class="on"><a href="#">사업장별 전력실황</a></li>
+                            <li><a href="#">전력현황</a></li>
+                            <li><a href="#">가스현황</a></li>
+                            <li><a href="#">수도현황</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="ems_drop_menu">
+                        <ul class="ems_drop_menu_list">
+                            <li>
+                                <button class="drop_btn">사업장 전체현황</button>
+                                <div class="ems_drop_dept2">
+                                    <ul class="ems_drop_dept2_list">
+                                        <li class="on">
+                                            <a href="#">사업장별 전력현황</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">사업장별 가스현황</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">사업장별 수도현황</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button class="drop_btn">사업장 개별현황</button>
+                                <div class="ems_drop_dept2">
+                                    <ul class="ems_drop_dept2_list">
+                                        <li class="on">
+                                            <a href="#">사업장별 전력현황</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">사업장별 가스현황</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">사업장별 수도현황</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="status_nav main size2">
+                    <div class="status_nav_list_wrap">
+                        <ul class="status_nav_list type2">
+                            <li>
+                                <div class="status_nav_list_title">
+                                    <strong>현대 계동사옥</strong>
+                                    
+                                </div>
+                                <div class="nav_scroll_wrap2">
+                                    <ul class="status_nav_sub_list_v2 type2">
+                                        <li>
+                                            <div class="nav_chk_area">
+                                                <input type="checkbox" id="nv_chkaa">
+                                               
+                                                <label for="nv_chkaa">
+                                                    <span class="nav_text">전력 계량기별 보기</span>
+                                                    <span class="label_btn">
+                                                        <i></i>
+                                                        
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            
+                                        </li>
+                                        <li>
+                                            <div class="nav_chk_area">
+                                                <input type="checkbox" id="nv_chkbb">
+                                                
+                                                <label for="nv_chkbb">
+                                                    <span class="nav_text">가스 계량기별 보기</span>
+                                                    <span class="label_btn">
+                                                        <i></i>
+                                                        
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            
+                                        </li>
+                                        <li>
+                                            <div class="nav_chk_area">
+                                                <input type="checkbox" id="nv_chkcc">
+                                                
+                                                <label for="nv_chkcc">
+                                                    <span class="nav_text">수도 계량기별 보기</span>
+                                                    <span class="label_btn">
+                                                        <i></i>
+                                                        
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="status_nav_list_title">
+                                    <strong>현재자동차 양재사옥</strong>
+                                    
+                                </div>
+                                <div class="nav_scroll_wrap2">
+                                    <ul class="status_nav_sub_list_v2 type2">
+                                        <li>
+                                            <div class="nav_chk_area">
+                                                <input type="checkbox" id="nv_chkaa">
+                                               
+                                                <label for="nv_chkaa">
+                                                    <span class="nav_text">전력 계량기별 보기</span>
+                                                    <span class="label_btn">
+                                                        <i></i>
+                                                        
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_chk_area">
+                                                <input type="checkbox" id="nv_chkbb">
+                                                
+                                                <label for="nv_chkbb">
+                                                    <span class="nav_text">가스 계량기별 보기</span>
+                                                    <span class="label_btn">
+                                                        <i></i>
+                                                        
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            
+                                        </li>
+                                        <li>
+                                            <div class="nav_chk_area">
+                                                <input type="checkbox" id="nv_chkcc">
+                                                
+                                                <label for="nv_chkcc">
+                                                    <span class="nav_text">수도 계량기별 보기</span>
+                                                    <span class="label_btn">
+                                                        <i></i>
+                                                        
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="writing_from" style="display: none;">
+                    <button class="write_box_close close">
+                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/write_close_btn.png" alt="닫기버튼">
+                    </button>
+                    <form action="">
+                        <div class="input_textarea">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="메모 내용을 입력해 주세요"></textarea>
+                        </div>
+                        <ul class="writing_btn">
+                            <li>
+                                <button class="submit" type="submit">저장</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <button class="navi_btn2 map"></button>
+            </div>
+            <!-- 사이드 메뉴 -->
+
+           
+        </nav>
+        <div class="widget_wrap map full wd pd no">
+            <div class="main_title no"></div>
+            <!-- widget dashboard -->
+            <div id='dashboard_type3'>
+                <div id='dw-12' data-code="6" class='dashboard_widget pd color'>
+                    <div class="ems_add_top_title">
+                        <ul class="ems_add_top_title_list">
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico1.png" alt="경부하">
+                                    <span>경부하</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico2.png" alt="중간부하">
+                                    <span>중간부하</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico3.png" alt="최대부하">
+                                    <span>최대부하</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico4.png" alt="누적사용량">
+                                    <span>누적사용량</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ems_middle_title">
+                        <strong>사업장별 일일 전력 실시간 사용 현황</strong>
+                        <div class="sum_chart">177,392 kwh</div>
+                    </div>
+                    <div class="echart_wrap">
+                        <div id="echartLine1" style="width:100%;  height:820px; z-index: 3;"></div>
+                        <div class="lien_wrap">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 2023. 02. 15 마크업 수정 -->
+                    <div class="chart_pos">
+                        <button class="add" style="display:none"><span></span></button>
+                    </div>
+                    <!-- 2023. 02. 21 메뉴 전면 수정 -->
+                    <div class="dashboard_menu_wrap">
+                        <div class="dashboard_item">
+                            <ul>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type1.png" alt="type1">
+                                        <strong>사업장별 경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type2.png" alt="type2">
+                                        <strong>공지사항</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type3.png" alt="type3">
+                                        <strong>경보</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type4.png" alt="type4">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type5.png" alt="type5">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type6.png" alt="type6">
+                                        <strong>고객사별 경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 4</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type7.png" alt="type7">
+                                        <strong>공지사항</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type8.png" alt="type8">
+                                        <strong>에너지 현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type9.png" alt="type9">
+                                        <strong>경보별 발생율</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type10.png" alt="type10">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type11.png" alt="type11">
+                                        <strong>평균 조치시간</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type12.png" alt="type12">
+                                        <strong>에너지 현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type13.png" alt="type13">
+                                        <strong>경보발생 설비현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type14.png" alt="type14">
+                                        <strong>평균 조치시간</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type15.png" alt="type15">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type16.png" alt="type16">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type17.png" alt="type17">
+                                        <strong>경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 8</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type18.png" alt="type18">
+                                        <strong>조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 8</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type19.png" alt="type19">
+                                        <strong>경보별 처리율</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 4</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type20.png" alt="type20">
+                                        <strong>사업장별 경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type21.png" alt="type21">
+                                        <strong>EMS</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type22.png" alt="type22">
+                                        <strong>통신상태/오경보수준</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>1 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type23.png" alt="type23">
+                                        <strong>통신상태</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>1 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type24.png" alt="type24">
+                                        <strong>오경보수준</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 2023. 02. 21 메뉴 전면 수정 -->
+                </div>
+                <div id='dw-12' data-code="6" class='dashboard_widget pd color'>
+                    <div class="ems_add_top_title">
+                        <ul class="ems_add_top_title_list">
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico2.png" alt="주의">
+                                    <span>주의</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico5.png" alt="경계">
+                                    <span>경계</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pos_title">
+                                    <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/ems_top_ico3.png" alt="심각">
+                                    <span>심각</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ems_middle_title">
+                        <strong>사업장별 전력 피크 현황</strong>
+                        <div class="ems_chart_info">피크 계산 기준 : (최근 15분간 순시전력 평균 / 요금적용피크)X100, 단위 : %</div>
+                    </div>
+                    <div class="echart_wrap">
+                        <div id="echartLine2" style="width:100%;  height:830px; z-index: 3;"></div>
+                        <div class="lien_wrap3">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 2023. 02. 15 마크업 수정 -->
+                    <div class="chart_pos">
+                        <button class="add" style="display:none"><span></span></button>
+                    </div>
+                    <!-- 2023. 02. 21 메뉴 전면 수정 -->
+                    <div class="dashboard_menu_wrap">
+                        <div class="dashboard_item">
+                            <ul>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type1.png" alt="type1">
+                                        <strong>사업장별 경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type2.png" alt="type2">
+                                        <strong>공지사항</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type3.png" alt="type3">
+                                        <strong>경보</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type4.png" alt="type4">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type5.png" alt="type5">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li class="possible">
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type6.png" alt="type6">
+                                        <strong>고객사별 경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 4</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type7.png" alt="type7">
+                                        <strong>공지사항</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type8.png" alt="type8">
+                                        <strong>에너지 현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type9.png" alt="type9">
+                                        <strong>경보별 발생율</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type10.png" alt="type10">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type11.png" alt="type11">
+                                        <strong>평균 조치시간</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type12.png" alt="type12">
+                                        <strong>에너지 현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type13.png" alt="type13">
+                                        <strong>경보발생 설비현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type14.png" alt="type14">
+                                        <strong>평균 조치시간</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type15.png" alt="type15">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type16.png" alt="type16">
+                                        <strong>경보발생 및 조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 2</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type17.png" alt="type17">
+                                        <strong>경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 8</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type18.png" alt="type18">
+                                        <strong>조치현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>4 X 8</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type19.png" alt="type19">
+                                        <strong>경보별 처리율</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>8 X 4</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type20.png" alt="type20">
+                                        <strong>사업장별 경보현황</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type21.png" alt="type21">
+                                        <strong>EMS</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>2 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type22.png" alt="type22">
+                                        <strong>통신상태/오경보수준</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>1 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type23.png" alt="type23">
+                                        <strong>통신상태</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                                <li>
+                                    <div class="dashboard_menu_item">
+                                        <span>1 X 1</span>
+                                        <img src="http://project.finenuts.co.kr/2023/hyundal-chart/img/type24.png" alt="type24">
+                                        <strong>오경보수준</strong>
+                                    </div>
+                                    <button></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 2023. 02. 21 메뉴 전면 수정 -->
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src='http://project.finenuts.co.kr/2023/hyundal-chart/js/jquery-3.3.1.min.js'></script>
+    <script src="http://project.finenuts.co.kr/2023/hyundal-chart/js/echarts.min.js"></script>
+    <script src='http://project.finenuts.co.kr/2023/hyundal-chart/js/jquery-ui.js'></script>
+    <script src="http://project.finenuts.co.kr/2023/hyundal-chart/js/datapicker.js"></script>
+    <script src="http://project.finenuts.co.kr/2023/hyundal-chart/js/jquery.ui.sortable-animation.js"></script>
+    <script src="http://project.finenuts.co.kr/2023/hyundal-chart/js/common.js"></script>
+    <script>
+        $( function() {
+            // widget
+            $( "#dashboard_type3" ).sortable({
+                animation: 1000,
+                containment: 'parent',
+                cursor: 'move',
+                tolerance: 'pointer',
+                placeholder: 'dashboard_widget-placeholder',
+                
+               
+                update: function(event, ui) { 
+                    if (this === ui.item.parent()[0]) {
+                    var objectIdArray = [];
+                    $('.dashboard_widget').each(function() { 
+                        objectIdArray.push($(this).attr('data-code'));
+                    });
+                    widget(objectIdArray)
+                    }
+                }
+            });
+            $( "#dashboard_type3" ).disableSelection();
+            //위젯 이동시 실행되는 함수
+            function widget(value){
+                console.log(value);
+            }
+
+            
+
+            
+            // echart > 라인형
+            var myChart1 = echarts.init(document.getElementById('echartLine1'));
+            var myChart2 = echarts.init(document.getElementById('echartLine2'));
+            
+            var myChart1_option = {
+                tooltip: {
+                    backgroundColor: "rgba(225,225,225,0)",
+                    axisPointer: {
+                    type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    },
+                    trigger: 'item',
+                    formatter: '<span style="color:#fff">{a}<br>{c}kwh</span>'
+                },
+                
+                legend: {
+                    show:false
+                },
+                grid: {
+                    left: '10px',
+                    right: '30px',
+                    bottom: '0px',
+                    top:'20px',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'value',
+                    position: 'top',
+                    min: 0,
+                    max: 90000,
+                    interval: 10000,
+                    axisLabel: {
+                        fontSize: 12,
+                        fontFamiy: 'Pretendard',
+                        fontWeight: 500,
+                        lineHeight: 20,
+                        color:'#fff'
+                    },
+                    splitLine: { 
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed',
+                            width: 1,
+                            color: 'rgba(153, 153, 153, .45)'
+                        }
+                    }
+                    
+                },
+                {
+                    type: 'value',
+                    position: 'bottom',
+                    min: 0,
+                    max: 90000,
+                    interval: 10000,
+                    axisLabel: {
+                        fontSize: 12,
+                        fontFamiy: 'Pretendard',
+                        fontWeight: 500,
+                        lineHeight: 20,
+                        color:'#fff'
+                    },
+                    splitLine: { 
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed',
+                            width: 1,
+                            color: 'rgba(153, 153, 153, .45)'
+                        }
+                    }
+                    
+                },
+                ],
+                yAxis: {
+                    type: 'category',
+                    data: ['0h','1h', '2h', '3h', '4h', '현대자동차 양재사옥\n5h', '6h', '7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','현대 계동사옥 \n18h','19h','20h','21h','22h','23h','24h'],
+                    
+                    axisLabel: {
+                        fontSize: 12,
+                        fontFamiy: 'Pretendard',
+                        fontWeight: 500,
+                        lineHeight: 20,
+                        color:'#fff',
+                        rotate: 90,
+            interval: 0
+                        
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: true
+                    },
+                    
+                },
+                series: [
+                    {
+                        name: '경부하',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            show: true,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: '#358557',
+                        },
+                        data: [, , , , , 24000, , , , , , , , , , , , ,14000 ],
+                        label: {
+                            show: true,
+                            color: "#fff",
+                            fontSize: 12,
+                            formatter: function(d) {
+                                return  d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                            }
+                        },
+                        
+                    },
+                    {
+                        name: '중간부하',
+                        type: 'bar',
+                        stack: 'total',
+                        barWidth: 40,
+                        label: {
+                            show: true,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: '#E49319',
+                        },
+                        data: [, , , , , 21000, , , , , , , , , , , , ,11400 ],
+                        label: {
+                            show: true,
+                            color: "#fff",
+                            fontSize: 12,
+                            formatter: function(d) {
+                                return  d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                            }
+                        },
+                    },
+                    {
+                        name: '최대부하',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            show: true,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: '#AB0D0D',
+                            borderRadius:[0,6,6,0],
+                        },
+                        
+                        data: [, , , , , 21000, , , , , , , , , , , , ,20000 ],
+                        label: {
+                            show: true,
+                            color: "#fff",
+                            fontSize: 12,
+                            formatter: function(d) {
+                                return  d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                            }
+                        },
+                    },
+                    {
+                        name: '총부하',
+                        type: 'bar',
+                        stack: 'total',
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: 'rgba(225,225,225,0)',
+                        },
+                        data: [, , , , , 66000, , , , , , , , , , , , ,45400 ],
+                        label: {
+                            position:'start',
+                            padding:15,
+                            show: true,
+                            color: "#fff",
+                            fontSize: 14,
+                            formatter: function(d) {
+                                return  d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                            }
+                        },
+                    },
+                    {
+                    name: '누적사용량',
+                    type: 'line',
+                        label: {
+                            show: false,
+                            
+                        },
+                        tooltip: {
+                            backgroundColor: "#8F37FF",
+                            trigger: 'axis',
+                            axisPointer: {
+                            // Use axis to trigger tooltip
+                            type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                            },
+                            trigger: 'item',
+                            formatter: function(d) {
+                                var text = d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                return  `<span style=" color:#fff; border-radius: 20px;">`+text+`</span>`
+                            }
+                        },
+                        emphasis: {
+                            focus: 'series',
+                            show:true
+                        },
+                        itemStyle:{
+                            color: '#8F37FF',
+                        },
+                       
+                        markLine: {
+                            data: [
+                                [{
+                                    symbol: 'none',
+                                    x: '93%',
+                                    yAxis: 'max'
+                                }, {
+                                    symbol: "circle",
+                                    label: {
+                                        padding: [5, 8],
+                                        borderRadius: [10],
+                                        borderWidth: 2,
+                                        borderColor: "#8F37FF",
+                                        backgroundColor: "#fff",
+                                        fontWeight: 'bold',
+                                        color: '#8F37FF',
+                                        position: 'start',
+                                        formatter: '현대자동차\n계동사옥 '
+                                    },
+                                    type: 'max',
+                                   
+                                }]
+                            ]
+                        },
+                        markPoint: {
+                            data: [
+                                { 
+                                    label: {
+                                        show:true
+                                    },
+                                    symbol:'image://http://project.finenuts.co.kr/2023/hyundal-chart/img/markpoint.png',
+                                    symbolSize: [58,31],
+                                    symbolOffset: [0, -20],
+                                    coord:[59000, 17], // 230201 [X좌표, Y좌표] 각각 값넣어주시면 되고 x좌표는 0부터 시작
+                                    label:{
+                                        formatter: '27,300',
+                                        fonfsize:'12',
+                                        fontWeight:'500',
+                                        color:'#fff',
+                                    }
+                                
+                                },
+                            ],
+                        },
+                        data: [0,2000,5000,7000,10000,14000, 16000 , 18000, 20000  ,24000 ,26000 ,28000 ,35000  , 39000,  42000,  48000,  50000, 59000, 66000, 70000, 76000, 80000, 82000, 86000, 90000],
+                    },
+                    {
+                    name: '누적사용량',
+                    type: 'line',
+                        label: {
+                            show: false
+                        },
+                        tooltip: {
+                            backgroundColor: "#8F37FF",
+                            trigger: 'axis',
+                            axisPointer: {
+                            // Use axis to trigger tooltip
+                            type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                            },
+                            trigger: 'item',
+                            formatter: function(d) {
+                                var text = d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                return  `<span style=" color:#fff; border-radius: 20px;">`+text+`</span>`
+                            }
+                        },
+                        emphasis: {
+                            focus: 'series',
+                            show:true
+                        },
+                        itemStyle:{
+                            color: '#8F37FF',
+                        },
+                        markLine: {
+                            data: [
+                                [{
+                                    symbol: 'none',
+                                    x: '93%',
+                                    yAxis: 'max'
+                                }, {
+                                    symbol: "circle",
+                                    label: {
+                                        padding: [5, 8],
+                                        borderRadius: [10],
+                                        borderWidth: 2,
+                                        borderColor: "#8F37FF",
+                                        backgroundColor: "#fff",
+                                        fontWeight: 'bold',
+                                        color: '#8F37FF',
+                                        position: 'start',
+                                        formatter: '현대자동차\n양재사옥 '
+                                    },
+                                    type: 'max',
+                                   
+                                }]
+                            ]
+                        },
+                        data: [0,5000,12500,15000,20000, 26000 , 28000, 36000  ,40000 ,46000 ,48000 ,55000  , 59000,  62000,  68000,  70000, 79000, 86000, 90000]
+                    }
+                    
+                ]
+            }
+
+            var myChart2_option = {
+                tooltip: {
+                    backgroundColor: "rgba(225,225,225,0)",
+                    trigger: 'axis',
+                    axisPointer: {
+                    // Use axis to trigger tooltip
+                    type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    },
+                    trigger: 'item',
+                    formatter: '<span style="color:#fff">{a}<br>{c}%</span>'
+                },
+               
+                legend: {
+                    show:false
+                },
+                grid: {
+                    left: '10px',
+                    right: '30px',
+                    bottom: '5px',
+                    top:'52px',
+                    containLabel: true
+                },
+                xAxis: [
+                {
+                    type: 'value',
+                    position: 'bottom',
+                    min: 0,
+                    max: 130,
+                    interval: 10,
+                    axisLabel: {
+                        fontSize: 12,
+                        fontFamiy: 'Pretendard',
+                        fontWeight: 500,
+                        lineHeight: 20,
+                        color:'#fff'
+                    },
+                    splitLine: { 
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed',
+                            width: 1,
+                            color: 'rgba(153, 153, 153, .45)'
+                        }
+                    }
+                    
+                },
+                ],
+                yAxis: {
+                    type: 'category',
+                    data: ['','', '', '', '', '현대자동차 양재사옥 ', '', '','','','','','','','','','','','현대 계동사옥 ','','','','','',''],
+                    axisLabel: {
+                        fontSize: 12,
+                        fontFamiy: 'Pretendard',
+                        fontWeight: 500,
+                        lineHeight: 20,
+                        color:'#fff',
+                        rotate: 90,
+                        interval: 0
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: true
+                    },
+                    
+                },
+                series: [
+                    {
+                        name: '주의',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            show: true,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: '#E49319',
+                        },
+                        data: [, , , , , 70, , , , , , , , , , , , ,80 ],
+                        label: {
+                            normal: {
+                                formatter: '{c}%',
+                                color:'#fff',
+                                show: true,
+                                position: 'inside'
+                            },
+                        }
+                    },
+                    {
+                        name: '경계',
+                        type: 'bar',
+                        stack: 'total',
+                        barWidth: 40,
+                        label: {
+                            show: true,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: '#CA5C03',
+                        },
+                        data: [, , , , , 10, , , , , , , , , , , , ,20 ],
+                        label: {
+                            normal: {
+                                formatter: '{c}%',
+                                color:'#fff',
+                                show: true,
+                                position: 'inside'
+                            },
+                        }
+                    },
+                    {
+                        name: '심각',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            show: true,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: '#AB0D0D',
+                            borderRadius:[0,6,6,0],
+                        },
+                        data: [, , , , , 20, , , , , , , , , , , , ,10 ],
+                        label: {
+                            normal: {
+                                formatter: '{c}%',
+                                color:'#fff',
+                                show: true,
+                                position: 'inside'
+                            },
+                        }
+                    },
+                    {
+                        name: '피크현황',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            show: true,
+                            position: 'center',
+                            padding:15,
+                            color:'#fff'
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle:{
+                            color: 'rgba(225,225,225,0)',
+                        },
+                        data: [, , , , , 23881.28, , , , , , , , , , , , ,23883.28 ],
+                        label: {
+                            position:'start',
+                            padding:15,
+                            show: true,
+                            color: "#fff",
+                            fontSize: 14,
+                            formatter: function(d) {
+                                return  d.data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                            }
+                        },
+                    },
+                    
+                    
+                ]
+            }
+
+            myChart1.setOption(myChart1_option);
+            myChart2.setOption(myChart2_option);
+
+
+            $(window).resize(function(){            
+                myChart1.resize();
+                myChart2.resize();
+            });
+
+            function chart_group(){
+                myChart1.resize();
+                myChart2.resize();
+            }
+
+
+            $(document).on('click','.navi_btn2', function(){
+                $(this).toggleClass('on');
+                $('.writing_from').hide();
+                if($(this).hasClass('on')){
+                    $('.nav_dept2').addClass('on');
+                    setTimeout(function() {
+                        $('.main_nav.wd').css('width','430px');
+                        $('.widget_wrap.wd').css('width','calc(100% - 430px)');
+                        $('.lien_wrap ul li').css('width','73.5%');
+                        chart_group()
+                    }, 600);
+                }else{
+                    $('.widget_wrap.wd').css('width','100%')
+                    $('.lien_wrap ul li').css('width','79%')
+                    $('.main_nav.wd').css('width','0')
+                    $('.nav_dept2').removeClass('on');
+                    chart_group()
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
