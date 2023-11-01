@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전화번호</title>
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <style>
+        .wrap{padding:25px;}
+        label{font-size:18px;font-weight:500;}
+        .input_box{position:relative;margin-top:10px;}
+        .input_box input{height:40px;padding:10px;border:1px solid #666;border-radius:6px;box-sizing:border-box;}
+        .input_box input:focus{border:1px solid #0973dc;outline:none;}
+        .input_box .btn_certify{position:absolute;left:200px;top:50%;margin-top:-19px;padding:10px 20px;border:0;border-radius:6px;background:#ccc;}
+        .input_box .btn_certify:hover{background:#999;}
+        .input_box .btn_certify.active{background:#0973dc;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <label for="phoneNum">휴대전화번호</label>
+        <div class="input_box">
+            <input id="phoneNum" type="text" oninput="handleInput(this, 13);">
+            <button class="btn_certify">인증 확인</button>
+        </div>
+    </div>
+
+    <script>
+        function handleInput(el, maxlength){
+            // 숫자만 가능
+            el.value = el.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+            // 4자리 하이픈 추가
+            el.value = el.value.replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+
+            // 11자리 까지만
+            var $vLength = el.value.length;
+
+            if($vLength > maxlength){
+                el.value = el.value.substr(0, maxlength);
+            }
+
+            // 11자리 되었을 때 버튼 활성화
+            if($vLength > 12){
+                $('.btn_certify').addClass('active');
+            }else{
+                $('.btn_certify').removeClass('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -121,7 +121,7 @@
                                         <label for="phone_number">휴대전화번호</label>
                                         <div class="certify_input_wrap">
                                             <div class="input_box">
-                                                <input id="phone_number" type="text" class="input_base" oninput="handleOnInput(this, 11)">
+                                                <input id="phone_number" type="text" class="input_base" oninput="handleOnInput(this, 13)">
                                                 <!-- <input id="phone_number" type="text" class="input_base" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> -->
                                             </div>
                                             <button type="button" class="btn_type_func size_l test">인증번호 발급</button>
@@ -134,34 +134,30 @@
                                         .test.on{background:#0973DC;}
                                     </style>
                                     <script>
-                                        var $phone_num = $('#phone_number');
-                                        // var $nvalue = $phone_num.value();
-                                        // var $num = isNaN($nvalue);
-
                                         function handleOnInput(el, maxlength){
+                                            // 숫자만 가능
                                             el.value = el.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+                                            // 4자리 하이픈 추가
+                                            el.value = el.value.replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
                                             
-                                            if(el.value.length > maxlength){
+                                            // 11개 까지만
+                                            var $vlength = el.value.length;
+
+                                            if($vlength > maxlength){
                                                 el.value = el.value.substr(0, maxlength);
                                             }
 
-                                            if(el.value.length > 10){
+                                            // 11자리 다 치면 버튼 활성화
+                                            if($vlength > 12){
                                                 $('.test').addClass('on');
+                                            }else{
+                                                $('.test').removeClass('on');
                                             }
                                         }
 
-
-                                        $phone_num.keyup(function(e){
-                                            // if($phone_num.value.length = 10){
-                                            //     console.log(3);
-                                            // }
-                                            // console.log($nvalue,3);
-                                            // if($num == false){
-                                            //     console.log(3);
-                                            // }else{
-                                            //     console.log(5);
-                                            // }
-                                        });
+                                        // $(document).on("keyup", "#phone_number", function() {
+                                            
+                                        // });
                                     </script>
 
 
