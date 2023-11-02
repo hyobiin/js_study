@@ -6,48 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴</title>
     <link rel="stylesheet" href="../../css/reset.min.css">
+    <link rel="stylesheet" href="css/menu.css">
     <script src="../../js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div id="wrap" class="wrap">
         <header id="hedaer" class="header">
-            <div class="inner">
-                <div class="header_left">
-                    <h1>
-                        <a href="#none;"><img src="" alt=""></a>
-                    </h1>
-                    <div class="lang">
-                        <button class="btn_lang">KR</button>
-                        <ul>
-                            <li>KR</li>
-                            <li>JP</li>
-                        </ul>
-                    </div>
-                </div>
-                <nav class="nav_wrap">
+            <div class="header_left">
+                <h1>
+                    <a href="#none;"><img src="img/logo_wh.svg" alt="오뚜기 로고"></a>
+                </h1>
+                <div class="lang_box"><!--// [D] 클릭시 active 추가 -->
+                    <button class="btn_lang">KR</button>
                     <ul>
-                        <li>
-                            <a href="#none;">회사소개</a>
-                            <ul class="sub_menu">
-                                <li>
-                                    <a href="#none;"></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header_right">
-                    <ul>
-                        <li>
-                            <button class="btn_search">찾기</button>
-                        </li>
-                        <li>
-                            <a href="#none;" title="챗봇">챗봇</a>
-                        </li>
+                        <li>KR</li>
+                        <li>JP</li>
                     </ul>
                 </div>
             </div>
+            <nav class="nav_wrap">
+                <ul>
+                    <li>
+                        <a href="#none;">회사소개</a>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#none;">소개</a>
+                            </li>
+                            <li>
+                                <a href="#none;">오시는길</a>
+                            </li>
+                            <li>
+                                <a href="#none;">오시는길2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none;">제품이야기</a>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#none;">제품</a>
+                            </li>
+                            <li>
+                                <a href="#none;">이야기</a>
+                            </li>
+                            <li>
+                                <a href="#none;">제품이야기</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none;">브랜드경험</a>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#none;">브랜드</a>
+                            </li>
+                            <li>
+                                <a href="#none;">이야기</a>
+                            </li>
+                            <li>
+                                <a href="#none;">경험</a>
+                            </li>
+                            <li>
+                                <a href="#none;">브랜드경험</a>
+                            </li>
+                            <li>
+                                <a href="#none;">고객</a>
+                            </li>
+                        </ul>
+                        <li>
+                            <a href="#none;">홍보센터</a>
+                            <ul class="sub_menu">
+                                <li>
+                                    <a href="#none;">홍보</a>
+                                </li>
+                                <li>
+                                    <a href="#none;">센터</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none;">고객서비스</a>
+                            <ul class="sub_menu">
+                                <li>
+                                    <a href="#none;">고객</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_right">
+                <ul>
+                    <li>
+                        <button class="btn_search">찾기</button>
+                    </li>
+                    <li>
+                        <a href="#none;" title="챗봇">챗봇</a>
+                    </li>
+                </ul>
+            </div>
         </header>
+        <div>
+            <img src="img/temp.jpg" alt="배경 이미지">
+        </div>
+
+        <style>
+            .counter_wrap{counter-reset:basic;}
+            .counter_wrap li{position:relative;margin-top:8px;padding-left:19px;font-size:16px;color:#222;line-height:26px;letter-spacing:-.5px;}
+            .counter_wrap li::before{content:counter(basic) ".";counter-increment:basic;position:absolute;top:0;left:0;}
+
+            .counter_wrap .circle_num li::before{content:counter(basic);top:6px;width:14px;height:14px;margin-left:-.5px;border:1px solid #222;border-radius:50%;font-size:11px;color:#222;line-height:13px;text-align:center;}
+        </style>
+        <div class="counter_wrap">
+            <ul class="basic_num">
+                <li>짱구</li>
+                <li>짱아</li>
+                <li>2023년</li>
+            </ul>
+
+            <ul class="circle_num">
+                <li>동그짱구</li>
+                <li>라미짱아</li>
+                <li>냠2023년</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

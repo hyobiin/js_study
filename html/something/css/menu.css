@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:"OTTOGISans";
+    font-weight:300;
+    font-style:normal;
+    src:url(../../css/font/OttogiSans-Light.otf) format('truetype');
+    font-display:block;
+}
+
+@font-face {
+    font-family:"OTTOGISans";
+    font-weight:500;
+    font-style:normal;
+    src:url(../../css/font/OttogiSans-Medium.otf) format('truetype');
+    font-display:block;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button,iframe,th,td,a,select,input,textarea{font-family:'OTTOGISans';font-weight:300;}
+button{background:transparent;}
+
+/* 헤더 */
+.header{position:absolute;left:0;right:0;top:0;height:100px;}
+.header .header_left{position:absolute;left:25px;top:0;bottom:0;display:flex;align-items:center;}
+.header .header_left h1 a{display:block;width:50px;height:50px;}
+.header .header_left h1 a img{width:100%;}
+.header .header_left .lang_box{position:relative;padding:0 20px;}
+.header .header_left .lang_box ul{display:none;position:absolute;left:0;top:25px;}
+.header .header_left .lang_box.active ul{display:block;}
+.header .nav_wrap{height:100%;}
+.header .nav_wrap > ul{position:relative;display:flex;justify-content:center;align-items:center;height:100%;}
+.header .nav_wrap > ul >li > a{padding:0 15px;}
+.header .nav_wrap > ul .sub_menu{display:none;position:absolute;left:0;top:50px;}
+.header .nav_wrap > ul > li:hover .sub_menu{display:block;}
+.header .header_right{position:absolute;right:25px;top:0;bottom:0;display:flex;align-items:center;}
+.header .header_right ul::after{content:'';display:block;clear:both;}
+.header .header_right ul li{float:left;padding:0 10px;}
