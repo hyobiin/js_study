@@ -248,6 +248,7 @@
 
     <script>
         // [D] 221125 최근 메뉴 유동적으로 변경 --s
+        // => 최근 메뉴 갯수가 유동적이기 때문에
         function menuHeight(){
             var $userHeight = $('.all_menu_wrap .user_info').outerHeight();
 
@@ -264,20 +265,20 @@
             var $index = $this.index();
             var $total=0;
 
+            // => 왼쪽 메뉴 눌렀을 때 위치 잡아주는 부분
             for(i = 0; i < $index; i++){ 
-                $total += $con.eq(i).outerHeight(true);
+                $total += $con.eq(i).outerHeight(true); // => 선택한 부분의 outerheight
             }
 
             var $offset = $con.eq($index).offset().top - 246; // [D] 221020 수정
-            console.log($offset);
             
-            if($index == 0){
+            if($index == 0){ // => 맨 첫번째 메뉴를 눌렀을 때
                 $('.sub_menu').stop().delay(100).animate({scrollTop:0}, 400);
             }else{
                 $('.sub_menu').stop().delay(100).animate({scrollTop:$total+20}, 400);
             }                
         
-            e.preventDefault();
+            e.preventDefault(); // => a 태그 클릭 시 링크 값이 있어도 무시됨
         });
 
         $('.sub_menu').on('scroll',function(){
@@ -288,6 +289,7 @@
             var $subTop = $this.scrollTop();
             var $len = $con.length;
 
+            // => 스크롤 시 메뉴에 active 되는 지점
             for(i = 0; i < $len; i++){ 
                 if($con.eq(i).offset().top - 55 < 246){ // [D] 221020 수정
                     $nav.removeClass('active');
@@ -297,6 +299,7 @@
 
         });
 
+        // => 아래쪽 눌렀을 때 padding-bottom 값이 없으면 왼쪽 메뉴 active가 안되어서
         function conHeight(){
             var $con = $('.sub_menu');
             var $wh = $(window).height();
