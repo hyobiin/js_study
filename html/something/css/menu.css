@@ -29,9 +29,10 @@ button{background:transparent;}
 .header .header_left .lang_box.active ul{display:block;}
 .header .nav_wrap{height:100%;}
 .header .nav_wrap > ul{position:relative;display:flex;justify-content:center;align-items:center;height:100%;}
-.header .nav_wrap > ul >li > a{padding:0 15px;}
-.header .nav_wrap > ul .sub_menu{display:none;position:absolute;left:0;top:50px;}
-.header .nav_wrap > ul > li:hover .sub_menu{display:block;}
+.header .nav_wrap > ul > li{position:relative;}
+.header .nav_wrap > ul > li > a{padding:0 15px;}
+.header .nav_wrap > ul .sub_menu{display:none;position:absolute;left:15px;top:50px;}
+.header .nav_wrap > ul li:hover .sub_menu{display:block;}
 .header .header_right{position:absolute;right:25px;top:0;bottom:0;display:flex;align-items:center;}
 .header .header_right ul::after{content:'';display:block;clear:both;}
 .header .header_right ul li{float:left;padding:0 10px;}

@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>전체메뉴 (로그인 후)</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- css, js -->
+    <link rel="stylesheet" href="../../css/reset.min.css">
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <style>
+    /*============================================================
+    common
+    =============================================================*/
+    #skip-navigation{position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;display:none;}
+    .dimd{overflow:hidden;}
+    .blind{position:absolute;left:-10000px;top:-10000px;width:0;height:0;font-size:0;}
+    .dim{background: rgba(0, 0, 0, 0.7) !important;cursor:pointer;}
+    .blind{position:absolute;left:-10000px;top:-10000px;width:0;height:0;font-size:0;}
+
+    /* full layer popup */
+    .full_layer{background:#fff;}
+    .full_layer .right{position:absolute;right:30px;top:14px;}
+    .full_layer .right button{margin-left:5px;}
+    .full_layer .right button:first-child{margin-left:0;}
+    .full_layer .header_box .close{width:25px;height:25px;background:url(../images/common/ico_menu_close.svg) no-repeat 50% / 25px;vertical-align:middle;}
+    .full_layer .header_box{position:fixed;left:0;top:0;width:100%;height:54px;background:#fff;}
+    .full_layer .header_box h1{font-family:"HeadRegular";font-size:18px;font-weight:400;line-height:53px;text-align:center;}
+    .full_layer .pop_con{position:absolute;left:0;right:0;top:54px;bottom:0;}
+    .full_layer .pop_con .contents{top:0;padding:30px;}
+        
+    /* 전체 메뉴 */
+    .all_menu_pop .header_box .back{position:absolute;top:10px;left:18px;width:35px;height:35px;background:url(../images/common/ico_back.svg) no-repeat center/22px 12px;}
+    .all_menu_pop .header_box .home{width:25px;height:25px;background:url(../images/common/ico_menu_home.svg) no-repeat 50% / 25px;vertical-align:middle;}
+    .all_menu_pop .header_box .set{width:25px;height:25px;background:url(../images/common/ico_menu_set.svg) no-repeat 50% / 25px;vertical-align:middle;}
+    .all_menu_wrap .user_info{padding:10px 30px 22px;border-bottom:4px solid #eee;box-sizing:border-box;}
+    .all_menu_wrap .login_info{height:41px;}
+    .all_menu_wrap .user_info .name{display:inline-block;font-size:18px;line-height:18px;}
+    .all_menu_wrap .user_info .name::after{content:'';display:inline-block;width:20px;height:20px;background:url(../images/common/ico_more_gray.svg) no-repeat 0 / 20px;vertical-align:middle;}
+    .btn_out{position:absolute;right:19px;top:10px;padding:5px;font-size:13px;line-height:16px;color:#999;text-decoration:underline;}
+    .btn_out::before{content:'';display:inline-block;width:14px;height:14px;margin-right:3px;background:url(../images/common/ico_logout.svg) no-repeat 0 0 / 14px;vertical-align:middle;}
+    .all_menu_wrap .user_info .car_num{padding-top:5px;line-height:18px;color:#00aad2;}
+    .all_menu_wrap .user_info strong{display:block;padding-top:20px;font-size:15px;color:#666;line-height:20px;}
+    .all_menu_wrap .recent_menu_area{padding-top:10px;}
+    .all_menu_wrap .recent_menu_area li{padding-top:5px;}
+    .all_menu_wrap .recent_menu_area li:first-child{padding-top:0;}
+    .all_menu_wrap .recent_menu_area li a{display:block;overflow:hidden;position:relative;padding:10px 41px 10px 20px;border:1px solid #eaeaea;background:#fff;font-size:14px;line-height:17px;text-overflow:ellipsis;white-space:nowrap;}
+    .all_menu_wrap .recent_menu_area li a::after{content:'';position:absolute;right:10px;top:50%;width:16px;height:16px;margin-top:-8px;background:url(../images/common/ico_more_s.svg) no-repeat 50% 50% / 16px;}
+    .all_menu_wrap .recent_menu_area.nodata li a{background:#F6F3F2;}
+    .all_menu_wrap .recent_menu_area.nodata li a::after{display:none;}
+
+    .all_menu_wrap .all_menu_area{position:absolute;top:242px;bottom:0;left:0;right:0;}
+    .all_menu_wrap .all_menu_area::before{content:'';position:absolute;top:0;bottom:0;left:0;width:120px;background:#f6f3f2;}
+    .all_menu_wrap .menu_list{overflow-y:auto;position:absolute;left:0;top:0;bottom:0;z-index:10;width:120px;}
+    .all_menu_wrap .menu_list li{position:relative;height:60px;font-size:13px;line-height:15px;color:#333;box-sizing:border-box;}
+    .all_menu_wrap .menu_list .active{background:#fff;color:#00aad2;}
+    .all_menu_wrap .menu_list .active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#00aad2;}
+    .all_menu_wrap .menu_list li a{position:absolute;top:50%;left:0;right:0;padding:15px;font-weight:700;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+    .all_menu_wrap .sub_menu{overflow-y:auto;position:absolute;top:0;bottom:0;left:0;right:0;padding:0 40px 500px 145px}
+    .all_menu_wrap .sub_menu .tit{display:block;font-family:"HyundaiSansText", sans-serif;font-size:15px;font-weight:700;line-height:18px;color:#00aad2;}
+    .all_menu_wrap .sub_menu p{padding-top:30px;font-size:14px;font-weight:700;line-height:18px;color:#000;}
+    .all_menu_wrap .sub_menu .tit + ul{padding-top:30px;}
+    .all_menu_wrap .sub_menu li{padding:50px 0;border-top:1px solid #eee;}
+    .all_menu_wrap .sub_menu li:first-child{padding:26px 0 50px;border:0;}
+    .all_menu_wrap .sub_menu li:last-child{padding-bottom:0;}
+    .all_menu_wrap .sub_menu li ul{padding-top:15px;}
+    .all_menu_wrap .sub_menu li li{padding:0 !important;border:0;font-size:13px;line-height:25px;}
+    .all_menu_wrap .sub_menu li li a{color:#666;}
+    </style>
+</head>
+<body>
+    <!-- skip-navigation -->
+    <div id="skip-navigation">
+        <p><a href="#header">헤더영역 바로가기</a></p>
+        <p><a href="#container">컨텐츠영역 바로가기</a></p>
+        <p><a href="#nav">네비게이션메뉴영역 바로가기</a></p>
+    </div>
+    <!-- //skip-navigation -->
+
+	<!-- wrap -->
+	<div class="wrap">
+	    <!-- container -->
+	    <div id="container" class="container">
+	        <h1 class="blind">컨텐츠영역</h1>
+	    </div>
+	    <!-- //container -->	    
+        <div id="popAllMenu" class="layer_wrap full_layer all_menu_pop" style="display:block;">
+            <div class="pop_con">
+                <div class="inner">
+                    <div class="header_box">
+                        <div class="right">
+                            <button class="home" aria-label="삭제"></button>
+                            <!-- <button class="set" aria-label="삭제"></button> --><!--// [D] 221020 설정 삭제 -->
+                            <button class="close" aria-label="삭제"></button>
+                        </div>
+                    </div>
+                    <div class="con">
+                        <div class="all_menu_wrap">
+                            <div class="user_info">
+                                <div class="login_info">
+                                    <a href="#none;" class="name">Hyun-dia Kim</a>
+                                    <a href="#none;" class="btn_out">Logout</a>
+                                    <p class="car_num">SBA1234A</p>
+                                </div>
+                                <!-- [D] 221020 최근 본 메뉴 변경 -->
+                                <!-- <ul class="util">
+                                    <li class="ico"><a href="#none;">battery status check</a></li>
+                                    <li class="ico2"><a href="#none;">charging station find</a></li>
+                                    <li class="ico3"><a href="#none;">repair shop find</a></li>
+                                </ul> -->
+                                <!-- [D] 221125 최근메뉴 타이틀 추가 -->
+                                <strong>Recent menu</strong>
+                                <!--// [D] 221125 최근메뉴 타이틀 추가 -->
+                                <ul class="recent_menu_area">
+                                    <li><a href="#none;">Real-time EV batterty information</a></li>
+                                    <li><a href="#none;">EV battery safety information</a></li>
+                                    <li><a href="#none;">Battery opertating guide</a></li>
+                                </ul>
+                                <!--// [D] 221020 최근 본 메뉴 변경 -->
+                            </div>
+                            <!-- [D] 221005 전체메뉴 구성 반영 -->
+                            <div class="all_menu_area">
+                                <ul class="menu_list">
+                                    <li class="active"><a href="#none;">EV Battery Management</a></li>
+                                    <li><a href="#none;">Charging</a></li>
+                                    <li><a href="#none;">Insurance</a></li>
+                                    <li><a href="#none;">Maintenance</a></li>
+                                    <li><a href="#none;">Used car</a></li>
+                                    <li><a href="#none;">HMGICS</a></li>
+                                    <li><a href="#none;">Parking</a></li>
+                                    <li><a href="#none;">More</a></li><!--// [D] 221209 텍스트 수정 -->
+                                    <li><a href="#none;">Opensource license</a></li>
+                                    <li><a href="#none;">Terms of Service</a></li>
+                                </ul>
+                                <div class="sub_menu">
+                                    <ul>
+                                        <li>
+                                            <strong class="tit">EV Battery Management</strong>
+                                            <p>EV Battery Management</p>
+                                            <ul>
+                                                <li><a href="#none;">Chargin statues info.</a></li>
+                                                <li><a href="#none;">Battery usage tendency</a></li>
+                                                <li><a href="#none;">Battery safety info.</a></li>
+                                                <li><a href="#none;">Battery deterioration factor derivation/Guide</a></li>
+                                            </ul>
+                                            <p>EV ECO Driving</p>
+                                            <ul>
+                                                <li><a href="#none;">Detail of efficiency</a></li>
+                                                <li><a href="#none;">My efficiency ranking info.</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Charging</strong>
+                                            <ul>
+                                                <li><a href="#none;">Search station</a></li>
+                                                <li><a href="#none;">Favorite station</a></li>
+                                                <li><a href="#none;">Charging history</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Insurance</strong>
+                                            <ul>
+                                                <li><a href="#none;">New Car Insurance</a></li>
+                                                <li><a href="#none;">My Insurance</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Maintenance</strong>
+                                            <ul>
+                                                <li><a href="#none;">Search maintenance center</a></li>
+                                                <li><a href="#none;">Maintenance history</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Used car</strong>
+                                            <ul>
+                                                <li><a href="#none;">My car value inquiry</a></li>
+                                            </ul>
+                                            <p>Tax info</p>
+                                            <ul>
+                                                <li><a href="#none;">COE fluctuation</a></li>
+                                                <li><a href="#none;">PARF rebate</a></li>
+                                                <li><a href="#none;">COE rebate</a></li>
+                                                <li><a href="#none;">Current EV Tax benefits</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">HMGICS</strong>
+                                            <ul>
+                                                <li><a href="#none;">Customer experience</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Parking</strong>
+                                            <ul>
+                                                <li><a href="#none;">Search Parking lot</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">More</strong><!--// [D] 221209 텍스트 수정 -->
+                                            <p>My page</p>
+                                            <ul>
+                                                <li><a href="#none;">My Info</a></li>
+                                                <li><a href="#none;">Privacy</a></li>
+                                                <!-- <li><a href="#none;">Share</a></li> --><!--//[D] 221209 삭제-->
+                                                <li><a href="#none;">My subscribe</a></li><!--// [D] 221209 항목 추가 -->
+                                                <li><a href="#none;">Partner company linkage</a></li>
+                                            </ul>
+                                            <!-- [D] 221209 카테고리 삭제 -->
+                                            <!-- <p>ECS subscribe</p>
+                                            <ul>
+                                                <li><a href="#none;">My subscribe</a></li>
+                                                <li><a href="#none;">Subscription payment details</a></li>
+                                                <li><a href="#none;">Payment card</a></li>
+                                            </ul> -->
+                                            <!--// [D] 221209 카테고리 삭제 -->
+                                            <p>Inquiry</p>
+                                            <ul>
+                                                <li><a href="#none;">Contact Us</a></li>
+                                                <li><a href="#none;">FAQ</a></li>
+                                                <li><a href="#none;">1:1 Inquiry</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Opensource license</strong>
+                                            <ul>
+                                                <li><a href="#none;">Opensource license</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">Terms of Service</strong>
+                                            <ul>
+                                                <li><a href="#none;">Terms of Service</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--// [D] 221005 전체메뉴 구성 반영 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	<!-- //wrap -->
+
+    <script>
+        // [D] 221125 최근 메뉴 유동적으로 변경 --s
+        function menuHeight(){
+            var $userHeight = $('.all_menu_wrap .user_info').outerHeight();
+
+            $('.all_menu_wrap .all_menu_area').css('top',$userHeight);
+        }
+
+        menuHeight();
+        // [D] 221125 최근 메뉴 유동적으로 변경 --e
+        
+        // 전체메뉴
+        $('.menu_list li').on('click',function(e){
+            var $this = $(this);
+            var $con = $('.sub_menu > ul > li')
+            var $index = $this.index();
+            var $total=0;
+
+            for(i = 0; i < $index; i++){ 
+                $total += $con.eq(i).outerHeight(true);
+            }
+
+            var $offset = $con.eq($index).offset().top - 246; // [D] 221020 수정
+            console.log($offset);
+            
+            if($index == 0){
+                $('.sub_menu').stop().delay(100).animate({scrollTop:0}, 400);
+            }else{
+                $('.sub_menu').stop().delay(100).animate({scrollTop:$total+20}, 400);
+            }                
+        
+            e.preventDefault();
+        });
+
+        $('.sub_menu').on('scroll',function(){
+
+            var $this = $(this);
+            var $con = $this.find('> ul > li')
+            var $nav = $('.menu_list li');
+            var $subTop = $this.scrollTop();
+            var $len = $con.length;
+
+            for(i = 0; i < $len; i++){ 
+                if($con.eq(i).offset().top - 55 < 246){ // [D] 221020 수정
+                    $nav.removeClass('active');
+                    $nav.eq(i).addClass('active');
+                }
+            }     
+
+        });
+
+        function conHeight(){
+            var $con = $('.sub_menu');
+            var $wh = $(window).height();
+            var $h = $wh - 300;            
+            $con.css('padding-bottom',$h);
+        }
+        conHeight();
+
+        $(window).resize(function(){
+            conHeight();
+        });
+    </script>
+</body>
+</html>

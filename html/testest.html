@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <link rel="stylesheet" href="https://channy0601.github.io/jquery/style/reset.css">
+    <link rel="stylesheet" href="https://channy0601.github.io/jquery/style/main.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+        header{z-index:99999999;background:#fff;}
+        .sect{padding-top:300px;}
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="main_tab">
+            <li class="on">
+                <a href="#none" class="bt">TAB1</a>
+                <ul class="sub_tab">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#none" class="bt">TAB2</a>
+                <ul class="sub_tab">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#none" class="bt">TAB3</a>
+                <ul class="sub_tab">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <!-- TAB1 -->
+    <section id="div1" class="sect">
+        <h2>TAB1</h2>
+    </section>
+    <!-- TAB2 -->
+    <section id="div2" class="sect">
+        <h2>TAB2</h2>
+    </section>
+    <!-- TAB3 -->
+    <section id="div3" class="sect">
+        <h2>TAB3</h2>
+    </section>
+
+
+    <script>
+    // $(".main_tab li a").on("click", function(){
+    //     // 버튼 hover 이벤트
+    //     $(this).parent().addClass("on");
+    //     $(this).parent().siblings().removeClass("on");
+
+    //     // 부드럽게 이동
+    //     $('html, body').animate({
+    //         scrollTop: $($.attr(this, 'href')).offset().top
+    //     }, 400);
+
+    // });
+
+
+    $(window).on('scroll', function(){
+        var cur_pos = $(this).scrollTop();
+        console.log(cur_pos);
+
+        // target 위치 표시 및 이동
+        var sections = $(".sect");
+        var nav = $('.main_tab');
+        var nav_height = nav.outerHeight();
+        
+        // sections.each(function(){
+            var top2 = $(this).offset().top - nav_height,
+                bottom = top + $(this).outerHeight();
+            
+        //     if(cur_pos >= top && cur_pos <= bottom){
+        //         nav.find('a').parent().removeClass("on");
+        //         sections.removeClass("active");
+
+        //         $(this).parent().addClass("on");
+        //         nav.find('a[href="#' + $(this).attr('id') + '"]').parent().addClass("on");
+        //     }
+        // });
+        var $len = sections.length;
+        console.log($len)
+
+        // for(i=0; i < $len; i++){
+        //     if($sections.eq(i).offset().top > top2){
+        //         $sections.removeClass('active');
+        //         $sections.eq(i).addClass('active');
+        //     }
+        // }
+    });
+
+
+    </script>
+</body>
+</html>
