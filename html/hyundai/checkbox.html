@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>알람 선택</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- css, js -->
+    <link rel="stylesheet" href="../../css/reset.min.css">
+    <link rel="stylesheet" href="http://project.finenuts.co.kr/2022/hyundai_ecs/css/common.css">
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <style>
+    /*============================================================
+    common
+    =============================================================*/
+    #skip-navigation{position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;display:none;}
+    .dimd{overflow:hidden;}
+    .blind{position:absolute;left:-10000px;top:-10000px;width:0;height:0;font-size:0;}
+    .dim{background: rgba(0, 0, 0, 0.7) !important;cursor:pointer;}
+    .blind{position:absolute;left:-10000px;top:-10000px;width:0;height:0;font-size:0;}
+
+    /* 알람 */
+    .alarm_wrap{padding:30px 30px 54px;}
+    .alarm_wrap .filter_wrap{padding-top:14px;}
+    .alarm_wrap .filter_wrap::after{content:'';display:block;clear:both;}
+    .alarm_wrap .filter_wrap button{float:right;position:relative;padding:5px 20px 5px 5px;font-size:13px;color:#666;line-height:20px;}
+    .alarm_wrap .filter_wrap button::after{content:'';position:absolute;right:3px;top:4px;width:16px;height:20px;background:url(../images/common/ico_arrow_down2.svg) no-repeat 0 / 20px 16px;}
+    .alarm_wrap .notice{font-size:13px;line-height:28px;color:#666;}
+    .alarm_wrap li{padding:20px 0;border-bottom:1px solid #eee;}
+    .alarm_wrap li:last-child{border:0;}
+    .alarm_wrap li .flag{font-size:13px;color:#666;line-height:20px;}
+    .alarm_wrap .new .flag{color:#00add2;}
+    .alarm_wrap li span{display:block;padding-top:5px;font-size:12px;line-height:28px;color:#666;}
+    .alarm_wrap li .desc{display:-webkit-box;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-height:18px;}
+
+    .alarm_wrap.type_select li{position:relative;padding:20px 35px 20px 0;}
+    .alarm_wrap.type_select li .form_wrap{position:absolute;top:20px;right:0;}
+    .alarm_wrap.type_select li .form_wrap input[type="checkbox"]+label{width:24px;height:24px;padding:0;}
+    .alarm_wrap.type_select li .form_wrap input[type="checkbox"]:checked+label::before{top:5px;}
+    .alarm_wrap.type_select li .form_wrap input[type="checkbox"]:checked+label::after{top:5px;}
+
+    .alarm_wrap.type_select .form_wrap.all_check_wrap{display:block;position:fixed;left:0;right:0;bottom:70px;margin:0 -30px;padding:0 30px;background:#fff;}
+    .alarm_wrap.type_select .form_wrap.all_check_wrap input[type="checkbox"]+label{position:relative;padding:17px 62px 17px 0;border:0;background:url(../images/common/ico_check.svg) no-repeat calc(100% - 30px) 50% / 24px;font-size:13px;line-height:20px;color:#666;text-align:right;}
+    .alarm_wrap.type_select .form_wrap.all_check_wrap input[type="checkbox"]+label::before{right:30px;left:unset;margin-right:0;}
+    .alarm_wrap.type_select .form_wrap.all_check_wrap input[type="checkbox"]+label::after{top:15px;right:30px;left:unset;}
+
+    </style>
+</head>
+<body>
+    <!-- skip-navigation -->
+    <div id="skip-navigation">
+        <p><a href="#header">헤더영역 바로가기</a></p>
+        <p><a href="#container">컨텐츠영역 바로가기</a></p>
+        <p><a href="#nav">네비게이션메뉴영역 바로가기</a></p>
+    </div>
+    <!-- //skip-navigation -->
+
+	<!-- wrap -->
+	<div class="wrap">
+	    <!-- header -->
+        <header id="header" class="header">
+            <h1 class="blind">헤더영역</h1>
+	        <a href="#none;" class="back"><span class="blind">Back</span></a>
+	        <h2 class="sub_tit"><span>Alarm</span></h2>
+            <div class="right">
+                <button class="delete off" aria-label="삭제"></button><!-- [D] 220718 비활성 상태 off 추가 -->
+            </div>
+	    </header>
+	    <!-- //header -->
+
+	    <!-- container -->
+	    <div id="container" class="container fixed_btn">
+	        <h1 class="blind">컨텐츠영역</h1>
+            <section class="alarm_wrap type_select">
+                <p class="notice">Notifications are displayed for up to 30 days.</p>
+                <div class="filter_wrap">
+                    <button onclick="ui.popupFn.open('popAlarmFilter');">All</button>
+                </div>
+                <ul class="form_list_wrap">
+                    <li class="new">
+                        <p class="flag">[EVENT]</p>
+                        <P class="desc">New car purchase special benefits</P>
+                        <span>2022.07.01 19:01</span>
+                        <span class="form_wrap">
+                            <input type="checkbox" id="labelCheck1">
+                            <label for="labelCheck1"></label>
+                        </span>
+                    </li>
+                    <li>
+                        <p class="flag">[charging]</p>
+                        <P class="desc">New car purchase special benefitsNew car purchase special benefitsNew car purchase special benefitsspecial benefitsspecial benefibenefibenefi.</P>
+                        <span>2022.07.01 19:01</span>
+                    </li>
+                    <li>
+                        <p class="flag">[EVENT]</p>
+                        <P class="desc">New car purchase special benefitsNew car purchase special benefitsNew car purchase special benefitsspecial benefitsspecial benefibenefibenefi.</P>
+                        <span>2022.07.01 19:01</span>
+                        <span class="form_wrap">
+                            <input type="checkbox" id="labelCheck2">
+                            <label for="labelCheck2"></label>
+                        </span>
+                    </li>
+                    <li>
+                        <p class="flag">[EVENT]</p>
+                        <P class="desc">New car purchase special benefits</P>
+                        <span>2022.07.01 19:01</span>
+                        <span class="form_wrap">
+                            <input type="checkbox" id="labelCheck3">
+                            <label for="labelCheck3"></label>
+                        </span>
+                    </li>
+                </ul>
+                <div class="form_wrap all_check_wrap">
+                    <input type="checkbox" id="labelCheckAll" checked>
+                    <label for="labelCheckAll">select all</label>
+                </div>
+            </section>
+
+            <!-- [D] 221017 전체 적용 플로팅 버튼 -->
+            <div class="btn_floating_box">
+                <a class="btn_top">위로</a>
+                <a class="btn_down">아래로</a>
+            </div>
+            <!--// [D] 221017 전체 적용 플로팅 버튼 -->
+            
+            <div class="btn_wrap fixed">
+                <button class="bg_navy">Delete</button><!-- 비활성: bg_gray, 활성: bg_navy -->
+            </div>
+	    </div>
+	    <!-- //container -->	    
+
+	</div>
+	<!-- //wrap -->
+
+    <!-- 알람 필터 -->
+    <div id="popAlarmFilter" class="layer_wrap bottom_pop alarm_filter" style="display:none;">
+        <div class="pop_con">
+            <div class="inner">
+                <div class="contents">
+                    <button type="button">all</button>
+                    <button type="button">charging</button>
+                    <button type="button">maintenance</button>
+                    <button type="button">insurance</button>
+                    <button type="button">used car</button>
+                    <button type="button">battery management</button>
+                    <button type="button">sale</button>
+                    <button type="button">my page</button>
+                </div>
+                <button type="button" class="btn_pop_close" onclick="ui.popupFn.close('popAlarmFilter');" aria-label="닫기"></button>
+            </div>
+        </div>
+        <div class="dim"></div>
+    </div>
+    <!-- 알람 필터 -->
+
+    <script>
+        // 전체 체크박스
+        var allCheckbox = {
+            init: function(){
+                this.$allCheckbox = $('.all_check_wrap input');
+                this.addEvent();
+            },
+            addEvent: function(){
+                var _this = this;
+                this.$allCheckbox.on('click', function(){
+                    var $closest = $(this).closest('.all_check_wrap');
+
+                    if($(this).prop('checked')) {
+                        $closest.siblings('.form_list_wrap').find('.form_wrap input').prop('checked', true);
+                        $closest.siblings('.all_check_wrap').find('input').prop('checked', true);
+                    } else {
+                        $closest.siblings('.form_list_wrap').find('.form_wrap input').prop('checked', false);
+                        $closest.siblings('.all_check_wrap').find('input').prop('checked', false);
+                    }
+                });
+
+                $(document).on('click', '.form_list_wrap .form_wrap input', function(){
+                    var $this = $(this);
+                    _this.checkAll($this);
+                });
+            },
+
+            checkAll: function(obj){
+                var $tg = $(obj).closest('.form_list_wrap');
+                var state = 1
+
+                $tg.find('.form_wrap input').each(function(i,el){
+                    if($(el).prop('checked')) state *= 1;
+                    else state *= 0;
+                });
+
+                this.$allCheckbox.prop('checked', state);
+            }
+        }
+
+        $(document).ready(function(){
+            allCheckbox.init();
+        });
+    </script>
+</body>
+</html>

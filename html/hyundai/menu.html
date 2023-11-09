@@ -281,6 +281,31 @@
             e.preventDefault(); // => a 태그 클릭 시 링크 값이 있어도 무시됨
         });
 
+        // 다른방법 참고
+        // http://project.finenuts.co.kr/2023/ottogi/html/privacy_policy.html
+        $('.menu_list li').on('click',function(e){
+            e.preventDefault();
+
+            var $this = $(this);
+            var $index = $this.parent().index() + 1;
+            var $headerHeight = $('.header').height();
+            var $len = $('.tit_wrap').length;
+            
+            for(var i = 1; i <= $len; i++){
+                if($index == i){
+                    if($(window).width() <= 1023){
+                        $('html, body').animate({
+                            scrollTop: $('#tab' + i).offset().top 
+                        }, 500);
+                    } else {
+                        $('html, body').animate({
+                            scrollTop: $('#tab' + i).offset().top - 80
+                        }, 500);
+                    }
+                };
+            };
+        });
+
         $('.sub_menu').on('scroll',function(){
 
             var $this = $(this);
