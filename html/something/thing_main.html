@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thing main</title>
+    <link rel="stylesheet" href="../../css/reset.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/thing_main.css">
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="http://project.finenuts.co.kr/2023/ottogi/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+    <header>
+        <a href="#none;" class="btn_back"><span class="blind">뒤로가기</span></a>
+        <h2>콘텐츠찾기</h2>
+    </header>
+
+    <div id="container" class="container">
+        <section>
+            <h3>콘텐츠 찾기</h3>
+            <ul class="tab_wrap">
+                <li class="active"><!-- [D] 활성시 active 추가 -->
+                    <button>메뉴별</button>
+                </li>
+                <li>
+                    <button>태그별</button>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h4>주제별로 깔끔하게 정리된</h4>
+            <h3>메뉴로 찾기</h3>
+            <ul class="menu_list_wrap">
+                <li class="ico_moneypick">
+                    <dl>
+                        <dt>머니PICK머니PICK머니PICK머니PICK머니PICK</dt>
+                        <dd>뭐니뭐니 해도 머니가 최고지니뭐니 해도 머니가 최고지니뭐니 해도 머니가 최고지니뭐니 해도 머니가 최고지</dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="swiper-container">
+                <!-- [D] 221004 슬라이드 별 아이콘 추가 -->
+                <!-- ico_insurance, ico_maintenance, ico_sell, ico_parking, ico_hyundai 아이콘 별 class 추가 -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ico_insurance">
+                        <a href="#none;">
+                            <strong class="slide_tit">My EV Insurance</strong>
+                            <span class="btn_more">More</span>
+                            <dl>
+                                <dt>Expire date</dt><!--// [D] 221004 텍스트 변경 -->
+                                <dd>30.jun.2022</dd><!--// [D] 220706 날짜 변경 -->
+                            </dl>
+                            <dl>
+                                <dt>Plan</dt><!--// [D] 221004 텍스트 변경 -->
+                                <dd>EV Premium</dd>
+                            </dl>
+                            <dl>
+                                <dt>Additional Drivers</dt><!--// [D] 221004 텍스트 변경 -->
+                                <dd>None</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="swiper-slide ico_maintenance">
+                        <a href="#none;">
+                            <strong class="slide_tit">My EV Maintenance</strong>
+                            <span class="btn_more">More</span>
+                            <dl>
+                                <dt>Reservation status</dt>
+                                <dd>Reserved</dd>
+                            </dl>
+                            <dl>
+                                <dt>Date</dt>
+                                <dd>30.jun.2022</dd><!--// [D] 220706 날짜 변경 -->
+                            </dl>
+                            <!-- [D] 220706 텍스트 변경 -->
+                            <dl>
+                                <dt>Recent Maintenance</dt><!--// [D] 221005 텍스트 변경 --><!--// [D] 221004 텍스트 변경 -->
+                                <dd>30.jun.2022</dd>
+                            </dl>
+                            <!--// [D] 220706 텍스트 변경  -->
+                            <!-- [D] 220706 텍스트 삭제 -->
+                            <!-- <p class="info">Battery recovery, Wiper replacement</p> -->
+                            <!--// [D] 220706 텍스트 삭제 -->
+                        </a>
+                    </div>
+                    <div class="swiper-slide ico_sell">
+                        <a href="#none;">
+                            <strong class="slide_tit">Sell My EV</strong>
+                            <span class="btn_more">More</span>
+                            <!-- [D] 220902 텍스트 변경 -->
+                            <dl>
+                                <dt>Car value</dt>
+                                <dd>77,700,000 SGD</dd>
+                            </dl>
+                            <dl>
+                                <dt>Date</dt>
+                                <dd>02.Sep.2022</dd>
+                            </dl>
+                            <dl>
+                                <dt>Milage</dt>
+                                <dd>20,100 km</dd>
+                            </dl>
+                            <!--// [D] 220902 텍스트 변경 -->
+                        </a>
+                    </div>
+                    <div class="swiper-slide ico_hyundai">
+                        <a href="#none;">
+                            <strong class="slide_tit">HMGICS Sales</strong>
+                            <span class="btn_more">More</span>
+                            <!-- [D] 220706 디자인 변경 -->
+                            <dl>
+                                <dt>Test drive</dt>
+                                <dd>Reserved <span>(20.Dec.2022)</span></dd>
+                            </dl>
+                            <dl>
+                                <dt>HMGICS tour</dt>
+                                <dd>Reserved <span>(20.Dec.2022)</span></dd>
+                            </dl>
+                            <!--// [D] 220706 디자인 변경 -->
+                        </a>
+                    </div>
+                    <!-- [D] 220805 주차카드 케이스 추가 -->
+                    <div class="swiper-slide ico_parking">
+                        <a href="#none;">
+                            <strong class="slide_tit">parking</strong>
+                            <span class="btn_more">More</span>
+                            <dl>
+                                <dt>nearby parking lot</dt>
+                                <dd>Bangbae Tower Parking Lot 189, Bangbae-ro, Seocho-gu, Seoul</dd>
+                            </dl>
+                            <dl>
+                                <dt>Parking available</dt>
+                                <dd>10</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <!--// [D] 220805 주차카드 케이스 추가 -->
+                    <!-- [D] 220706 내용 추가 -->
+                    <div class="swiper-slide ico_insurance">
+                        <a href="#none;">
+                            <strong class="slide_tit">My EV Insurance</strong>
+                            <span class="btn_more">More</span>
+                            <p class="txt">There is no vehicle insurance information registered.<br>
+                                ERGO car insurance<br>
+                                Join us.</p>
+                        </a>
+                    </div>
+                    <!--// [D] 220706 내용 추가 -->
+                    <!-- [D] 220718 주차카드 케이스 추가 -->
+                    <div class="swiper-slide ico_maintenance">
+                        <a href="#none;">
+                            <strong class="slide_tit">My EV Maintenance</strong>
+                            <span class="btn_more">More</span>
+                            <dl>
+                                <dt>Reservation status</dt>
+                                <dd>Not Reserved</dd>
+                            </dl>
+                            <dl>
+                                <dt>Date</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl>
+                                <dt>Recent Maintenance</dt><!--// [D] 221005 텍스트 변경 --><!--// [D] 221004 텍스트 변경 -->
+                                <dd>-</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="swiper-slide ico_sell">
+                        <a href="#none;">
+                            <strong class="slide_tit">Sell My EV</strong>
+                            <span class="btn_more">More</span>
+                            <!-- [D] 220902 텍스트 변경 -->
+                            <dl>
+                                <dt>Car value</dt>
+                                <dd>not searched</dd>
+                            </dl>
+                            <dl>
+                                <dt>Date</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl>
+                                <dt>Milage</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <!--// [D] 220902 텍스트 변경 -->
+                        </a>
+                    </div>
+                    <div class="swiper-slide ico_hyundai">
+                        <a href="#none;">
+                            <strong class="slide_tit">HMGICS Sales</strong>
+                            <span class="btn_more">More</span>
+                            <dl>
+                                <dt>Test drive</dt>
+                                <dd>Not Reserved</dd>
+                            </dl>
+                            <dl>
+                                <dt>HMGICS tour</dt>
+                                <dd>Not Reserved</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <!--// [D] 220718 주차카드 케이스 추가 -->
+                </div>
+                <!--// [D] 221004 슬라이드 별 아이콘 추가 -->
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    $('.tab_wrap li').on('click',function(){
+        
+        if(!$(this).hasClass('active')){
+            $('.tab_wrap li').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
+    var mySwiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        // direction: 'vertical',
+        // loop: true,
+        slidesPerView: 1.4,
+        spaceBetween: 10,
+        slidesOffsetBefore: 30,
+        slidesOffsetAfter: 60, 
+        // If we need pagination
+        pagination: {
+            // el: '.swiper-pagination',
+            // type: 'fraction',
+            el: 'swiper-pagination',
+            type : "bullets",
+            clickable: true,
+            renderBullet: function (index, className) {
+                // return '<span class="' + className + '">' + '<em>'+ bullet[index]+'</em>' + '<i></i>' + '<b></b>'  + '</span>';
+                return '<span class="' + className + '">' + '<i></i>' + '<b></b>'  + '</span>';
+            },
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        // },
+    });
+</script>
+
+</body>
+</html>
